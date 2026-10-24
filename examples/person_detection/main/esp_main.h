@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "sdkconfig.h"
+#include <stdint.h>
 
 // Use CLI_ONLY_INFERENCE mode when there is no camera path available:
 // - on ESP32-P4 without the P4 function EV board BSP (camera comes via
@@ -30,7 +31,6 @@
 
 // Enable this to get cpu stats
 #define COLLECT_CPU_STATS 1
-
 #if !defined(CLI_ONLY_INFERENCE)
 // Enable display support if BSP is enabled in menuconfig
 #if (CONFIG_TFLITE_USE_BSP)
@@ -42,6 +42,12 @@
 extern "C" {
 #endif
 extern void run_inference(void *ptr);
+extern volatile int g_benchmark_mode;
+extern volatile int g_last_invoke_ok;
+extern volatile long long g_last_invoke_us;
+extern volatile uint32_t g_last_invoke_cycles;
+extern volatile int g_last_raw_person;
+extern volatile int g_last_raw_no_person;
 #ifdef __cplusplus
 }
 #endif

@@ -28,9 +28,20 @@ limitations under the License.
 #include "freertos/task.h"
 
 #include <esp_heap_caps.h>
+#include <esp_cpu.h>
 #include <esp_timer.h>
 #include <esp_log.h>
 #include "esp_main.h"
+
+extern "C" {
+volatile int g_benchmark_mode = 0;
+volatile int g_last_invoke_ok = 1;
+volatile long long g_last_invoke_us = 0;
+volatile uint32_t g_last_invoke_cycles = 0;
+volatile int g_last_raw_person = 0;
+volatile int g_last_raw_no_person = 0;
+}
+
 
 namespace {
 const tflite::Model* model = nullptr;
@@ -105,7 +116,18 @@ void setup() {
   }
 
   // Get information about the memory area to use for the model's input.
+  printf("ARENA_CONFIGURED_BYTES=%d\n", kTensorArenaSize);
+  printf("ARENA_USED_BYTES=%d\n", interpreter->arena_used_bytes());
+
   input = interpreter->input(0);
+  printf("INPUT_TYPE=%s\n", TfLiteTypeGetName(input->type));
+  printf("INPUT_DIMS=%d,%d,%d,%d\n",
+         input->dims->data[0],
+         input->dims->data[1],
+         input->dims->data[2],
+         input->dims->data[3]);
+  printf("INPUT_SCALE=%.10f\n", input->params.scale);
+  printf("INPUT_ZERO_POINT=%ld\n", (long)input->params.zero_point);
 
 #ifndef CLI_ONLY_INFERENCE
   // Initialize Camera
@@ -128,16 +150,19 @@ void loop() {
     MicroPrintf("Image capture failed.");
   }
 
-  // Run the model on this input and make sure it succeeds.
-  if (kTfLiteOk != interpreter->Invoke()) {
+   // Run the model on this input and make sure it succeeds.
+  TfLiteStatus invoke_status = interpreter->Invoke();
+
+  if (invoke_status != kTfLiteOk) {
     MicroPrintf("Invoke failed.");
+    return;
   }
 
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t person_score = output->data.int8[kPersonIndex];
+  int8_t no_person_score = output->data.int8[kNotAPersonIndex];
 
   float person_score_f =
       (person_score - output->params.zero_point) * output->params.scale;
@@ -170,26 +195,30 @@ void run_inference(void *ptr) {
 
 #if defined(COLLECT_CPU_STATS)
   long long start_time = esp_timer_get_time();
+  uint32_t start_cycles = esp_cpu_get_cycle_count();
 #endif
-  // Run the model on this input and make sure it succeeds.
-  if (kTfLiteOk != interpreter->Invoke()) {
+  TfLiteStatus invoke_status = interpreter->Invoke();
+#if defined(COLLECT_CPU_STATS)
+  g_last_invoke_cycles = esp_cpu_get_cycle_count() - start_cycles;
+#endif
+  g_last_invoke_ok = (invoke_status == kTfLiteOk) ? 1 : 0;
+  if (invoke_status != kTfLiteOk && !g_benchmark_mode) {
     MicroPrintf("Invoke failed.");
   }
 
 #if defined(COLLECT_CPU_STATS)
   long long total_time = (esp_timer_get_time() - start_time);
-  printf("Total time = %lld\n", total_time / 1000);
-  //printf("Softmax time = %lld\n", softmax_total_time / 1000);
-  printf("FC time = %lld\n", fc_total_time / 1000);
-  printf("DC time = %lld\n", dc_total_time / 1000);
-  printf("conv time = %lld\n", conv_total_time / 1000);
-  printf("Pooling time = %lld\n", pooling_total_time / 1000);
-  printf("add time = %lld\n", add_total_time / 1000);
-  printf("mul time = %lld\n", mul_total_time / 1000);
-
-  /* Reset times */
-  total_time = 0;
-  //softmax_total_time = 0;
+  g_last_invoke_us = total_time;
+  if (!g_benchmark_mode) {
+    if (invoke_status == kTfLiteOk) printf("INVOKE_US=%lld\n", total_time);
+    else printf("INVOKE_FAILED=1\n");
+    printf("FC time = %lld\n", fc_total_time / 1000);
+    printf("DC time = %lld\n", dc_total_time / 1000);
+    printf("conv time = %lld\n", conv_total_time / 1000);
+    printf("Pooling time = %lld\n", pooling_total_time / 1000);
+    printf("add time = %lld\n", add_total_time / 1000);
+    printf("mul time = %lld\n", mul_total_time / 1000);
+  }
   dc_total_time = 0;
   conv_total_time = 0;
   fc_total_time = 0;
@@ -198,15 +227,27 @@ void run_inference(void *ptr) {
   mul_total_time = 0;
 #endif
 
+  if (invoke_status != kTfLiteOk) {
+    return;
+  }
   TfLiteTensor* output = interpreter->output(0);
+  if (invoke_status == kTfLiteOk) {
+    g_last_raw_person = (int)output->data.int8[kPersonIndex];
+    g_last_raw_no_person = (int)output->data.int8[kNotAPersonIndex];
+    if (!g_benchmark_mode) {
+      printf("RAW_OUTPUT_INT8=%d,%d\n", g_last_raw_person, g_last_raw_no_person);
+    }
+  }
 
   // Process the inference results.
-  int8_t person_score = output->data.uint8[kPersonIndex];
-  int8_t no_person_score = output->data.uint8[kNotAPersonIndex];
+  int8_t person_score = output->data.int8[kPersonIndex];
+  int8_t no_person_score = output->data.int8[kNotAPersonIndex];
 
   float person_score_f =
       (person_score - output->params.zero_point) * output->params.scale;
   float no_person_score_f =
       (no_person_score - output->params.zero_point) * output->params.scale;
-  RespondToDetection(person_score_f, no_person_score_f);
+  if (!g_benchmark_mode) {
+    RespondToDetection(person_score_f, no_person_score_f);
+  }
 }

@@ -23,3 +23,8 @@ idf_component_register(
 
     PRIV_REQUIRES ${pd_priv_reqs}
     INCLUDE_DIRS "")
+
+target_compile_definitions(${COMPONENT_LIB} PRIVATE
+    COLLECT_CPU_STATS=1
+    CLI_ONLY_INFERENCE=1
+)

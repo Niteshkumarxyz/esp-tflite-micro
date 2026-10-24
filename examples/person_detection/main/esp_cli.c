@@ -13,10 +13,13 @@
 // limitations under the License.
 
 #include <stdio.h>
+#include <inttypes.h>
+#include <stdlib.h>
 #include <string.h>
 #include <esp_log.h>
 #include <esp_console.h>
 #include <esp_heap_caps.h>
+#include <esp_system.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 
@@ -25,7 +28,8 @@
 #include "esp_timer.h"
 
 #if CLI_ONLY_INFERENCE
-#define IMAGE_COUNT 10
+#define IMAGE_COUNT 12
+#define BENCHMARK_IMAGE_COUNT 10
 static uint8_t *image_database[IMAGE_COUNT];
 
 
@@ -39,6 +43,8 @@ extern const uint8_t image6_start[]   asm("_binary_image6_start");
 extern const uint8_t image7_start[]   asm("_binary_image7_start");
 extern const uint8_t image8_start[]   asm("_binary_image8_start");
 extern const uint8_t image9_start[]   asm("_binary_image9_start");
+extern const uint8_t image10_start[]  asm("_binary_image10_start");
+extern const uint8_t image11_start[]  asm("_binary_image11_start");
 #endif
 
 static const char *TAG = "[esp_cli]";
@@ -124,14 +130,325 @@ static int inference_cli_handler(int argc, char *argv[])
     return 0;
 }
 
+
+typedef struct {
+    long long us;
+    uint32_t cycles;
+    int image;
+    int raw_person;
+    int raw_no_person;
+    int ok;
+} benchmark_sample_t;
+
+static int compare_long_long(const void *a, const void *b)
+{
+    long long x = *(const long long *)a;
+    long long y = *(const long long *)b;
+    return (x > y) - (x < y);
+}
+
+static int benchmark_cli_handler(int argc, char *argv[])
+{
+    if (argc != 2) {
+        printf("Usage: benchmark <measured_runs 1..10000>\n");
+        return 1;
+    }
+    char *end = NULL;
+    long requested = strtol(argv[1], &end, 10);
+    if (end == argv[1] || *end != '\0' || requested < 1 || requested > 10000) {
+        printf("ERROR: measured_runs must be between 1 and 10000\n");
+        return 1;
+    }
+    const int runs = (int)requested;
+    const int warmup_runs = 10;
+    benchmark_sample_t *samples = (benchmark_sample_t *)calloc((size_t)runs, sizeof(*samples));
+    long long *sorted = (long long *)calloc((size_t)runs, sizeof(*sorted));
+    if (samples == NULL || sorted == NULL) {
+        free(samples); free(sorted);
+        printf("ERROR: benchmark sample allocation failed\n");
+        return 1;
+    }
+    printf("BENCH_START,runs=%d,warmup=%d,images=%d,timing=interpreter_Invoke_only\n",
+           runs, warmup_runs, BENCHMARK_IMAGE_COUNT);
+    g_benchmark_mode = 1;
+    for (int i = 0; i < warmup_runs; ++i) {
+        run_inference((void *)image_database[i % BENCHMARK_IMAGE_COUNT]);
+        vTaskDelay(1);
+    }
+    int failures = 0;
+    int successful_runs = 0;
+    long long sum = 0;
+
+    for (int i = 0; i < runs; ++i) {
+        int image = i % BENCHMARK_IMAGE_COUNT;
+        run_inference((void *)image_database[image]);
+        vTaskDelay(1);
+
+        samples[i].us = g_last_invoke_us;
+        samples[i].cycles = g_last_invoke_cycles;
+        samples[i].image = image;
+        samples[i].ok = g_last_invoke_ok;
+        samples[i].raw_person =
+            samples[i].ok ? g_last_raw_person : 0;
+        samples[i].raw_no_person =
+            samples[i].ok ? g_last_raw_no_person : 0;
+
+        if (!samples[i].ok) {
+            failures++;
+            continue;
+        }
+
+        sorted[successful_runs++] = samples[i].us;
+        sum += samples[i].us;
+    }
+
+    g_benchmark_mode = 0;
+
+    long long mean_us = -1;
+    long long median = -1;
+    long long p95_us = -1;
+    long long min_us = -1;
+    long long max_us = -1;
+
+    if (successful_runs > 0) {
+        qsort(sorted, (size_t)successful_runs,
+              sizeof(*sorted), compare_long_long);
+
+        mean_us = sum / successful_runs;
+        min_us = sorted[0];
+        max_us = sorted[successful_runs - 1];
+
+        if (successful_runs % 2) {
+            median = sorted[successful_runs / 2];
+        } else {
+            median =
+                sorted[successful_runs / 2 - 1] / 2 +
+                sorted[successful_runs / 2] / 2 +
+                ((sorted[successful_runs / 2 - 1] % 2 +
+                  sorted[successful_runs / 2] % 2) / 2);
+        }
+
+        int p95_index =
+            (int)(((long long)95 * successful_runs + 99) / 100) - 1;
+
+        if (p95_index < 0) p95_index = 0;
+        p95_us = sorted[p95_index];
+    }
+
+    printf("BENCH_SAMPLES_BEGIN\n");
+    for (int i = 0; i < runs; ++i) {
+        printf("BENCH_SAMPLE,%d,%d,%lld,%" PRIu32 ",%d,%d,%d\n",
+               i + 1, samples[i].image, samples[i].us,
+               samples[i].cycles, samples[i].raw_person,
+               samples[i].raw_no_person, samples[i].ok);
+    }
+    printf("BENCH_SAMPLES_END\n");
+
+    printf("BENCH_SUMMARY,runs=%d,successful_runs=%d,failures=%d,"
+           "mean_us=%lld,median_us=%lld,p95_nearest_rank_us=%lld,"
+           "min_us=%lld,max_us=%lld\n",
+           runs, successful_runs, failures, mean_us, median,
+           p95_us, min_us, max_us);
+
+    free(sorted);
+    free(samples);
+
+    return failures == 0 ? 0 : 1;
+}
+
+#define DRIFT_LATENCY_CAPACITY 256
+
+static int drift_cli_handler(int argc, char *argv[])
+{
+    if (argc != 2) {
+        printf("Usage: drift <minutes 1..600>\n");
+        return 1;
+    }
+
+    char *end = NULL;
+    long requested = strtol(argv[1], &end, 10);
+    if (end == argv[1] || *end != '\0' ||
+        requested < 1 || requested > 600) {
+        printf("ERROR: minutes must be between 1 and 600\n");
+        return 1;
+    }
+
+    long long *latencies = calloc(
+        DRIFT_LATENCY_CAPACITY, sizeof(*latencies));
+    if (latencies == NULL) {
+        printf("ERROR: drift latency allocation failed\n");
+        return 1;
+    }
+
+    int baseline_set[BENCHMARK_IMAGE_COUNT] = {0};
+    int baseline_person[BENCHMARK_IMAGE_COUNT] = {0};
+    int baseline_no_person[BENCHMARK_IMAGE_COUNT] = {0};
+
+    const int reset_reason = (int)esp_reset_reason();
+    g_benchmark_mode = 1;
+
+    printf("DRIFT_PREP,minutes=%ld,warmup=10,interval_s=60,"
+           "images=%d,reset_reason=%d\n",
+           requested, BENCHMARK_IMAGE_COUNT, reset_reason);
+
+    for (int i = 0; i < 10; ++i) {
+        run_inference(
+            (void *)image_database[i % BENCHMARK_IMAGE_COUNT]);
+        vTaskDelay(1);
+    }
+
+    const long long start_us = esp_timer_get_time();
+    printf("DRIFT_START,minutes=%ld,interval_s=60,"
+           "timing=interpreter_Invoke_only,reset_reason=%d\n",
+           requested, reset_reason);
+
+    uint64_t total_runs = 0;
+    uint64_t total_failures = 0;
+    uint64_t total_output_mismatches = 0;
+    uint64_t overflow_minutes = 0;
+    int completed_minutes = 0;
+    int image_index = 0;
+
+    for (int minute = 1; minute <= (int)requested; ++minute) {
+        const long long deadline_us =
+            start_us + (long long)minute * 60000000LL;
+
+        int runs = 0;
+        int failures = 0;
+        int stored = 0;
+        int overflow = 0;
+        int output_mismatches = 0;
+        uint64_t sum_us = 0;
+        uint64_t sum_cycles = 0;
+        long long min_us = 0;
+        long long max_us = 0;
+
+        while (esp_timer_get_time() < deadline_us) {
+            int image = image_index % BENCHMARK_IMAGE_COUNT;
+            image_index++;
+
+            run_inference((void *)image_database[image]);
+
+            long long us = g_last_invoke_us;
+            uint32_t cycles = g_last_invoke_cycles;
+            int ok = g_last_invoke_ok;
+
+            if (runs == 0 || us < min_us) min_us = us;
+            if (runs == 0 || us > max_us) max_us = us;
+
+            sum_us += (uint64_t)us;
+            sum_cycles += (uint64_t)cycles;
+            runs++;
+            total_runs++;
+
+            if (!ok) {
+                failures++;
+                total_failures++;
+            } else {
+                int person = g_last_raw_person;
+                int no_person = g_last_raw_no_person;
+
+                if (!baseline_set[image]) {
+                    baseline_set[image] = 1;
+                    baseline_person[image] = person;
+                    baseline_no_person[image] = no_person;
+                } else if (person != baseline_person[image] ||
+                           no_person != baseline_no_person[image]) {
+                    output_mismatches++;
+                    total_output_mismatches++;
+                }
+            }
+
+            if (stored < DRIFT_LATENCY_CAPACITY) {
+                latencies[stored++] = us;
+            } else {
+                overflow = 1;
+            }
+
+            vTaskDelay(1);
+        }
+
+        long long p95_us = -1;
+        if (stored > 0 && !overflow) {
+            qsort(latencies, (size_t)stored,
+                  sizeof(*latencies), compare_long_long);
+            int p95_index =
+                (int)(((long long)95 * stored + 99) / 100) - 1;
+            if (p95_index < 0) p95_index = 0;
+            p95_us = latencies[p95_index];
+        }
+
+        if (overflow) overflow_minutes++;
+        completed_minutes += (runs > 0);
+
+        uint32_t free_internal = (uint32_t)heap_caps_get_free_size(
+            MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
+        uint32_t min_internal = (uint32_t)heap_caps_get_minimum_free_size(
+            MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
+        uint32_t free_spiram = (uint32_t)heap_caps_get_free_size(
+            MALLOC_CAP_SPIRAM);
+        uint32_t min_spiram = (uint32_t)heap_caps_get_minimum_free_size(
+            MALLOC_CAP_SPIRAM);
+
+        printf("DRIFT_SAMPLE,minute=%d,elapsed_s=%lld,runs=%d,"
+               "mean_us=%" PRIu64 ",p95_us=%lld,min_us=%lld,max_us=%lld,"
+               "mean_cycles=%" PRIu64 ",failures=%d,"
+               "output_mismatches=%d,total_output_mismatches=%" PRIu64 ","
+               "free_internal=%" PRIu32 ",min_internal=%" PRIu32 ","
+               "free_spiram=%" PRIu32 ",min_spiram=%" PRIu32 ","
+               "latency_overflow=%d\n",
+               minute,
+               (esp_timer_get_time() - start_us) / 1000000LL,
+               runs,
+               runs ? sum_us / (uint64_t)runs : 0,
+               p95_us, min_us, max_us,
+               runs ? sum_cycles / (uint64_t)runs : 0,
+               failures, output_mismatches, total_output_mismatches,
+               free_internal, min_internal, free_spiram, min_spiram,
+               overflow);
+
+        fflush(stdout);
+    }
+
+    g_benchmark_mode = 0;
+
+    printf("DRIFT_END,completed_minutes=%d,requested_minutes=%ld,"
+           "elapsed_s=%lld,total_runs=%" PRIu64 ","
+           "total_failures=%" PRIu64 ",output_mismatches=%" PRIu64 ","
+           "p95_overflow_minutes=%" PRIu64 "\n",
+           completed_minutes, requested,
+           (esp_timer_get_time() - start_us) / 1000000LL,
+           total_runs, total_failures,
+           total_output_mismatches, overflow_minutes);
+
+    free(latencies);
+
+    return (completed_minutes == requested &&
+            total_failures == 0 &&
+            total_output_mismatches == 0 &&
+            overflow_minutes == 0) ? 0 : 1;
+}
+
 int esp_cli_register_inference_command() {
     esp_console_cmd_t command = {
         .command = "detect_image",
         .help = "detect_image <image_number>"
-                "Note: image numbers ranging from 0 - 9 only are valid",
+                "Images 0-9: demo; 10: host person; 11: host no-person",
         .func = inference_cli_handler,
     };
     esp_console_cmd_register(&command);
+    esp_console_cmd_t benchmark_command = {
+        .command = "benchmark",
+        .help = "benchmark <measured_runs 1..10000>",
+        .func = benchmark_cli_handler,
+    };
+    esp_console_cmd_register(&benchmark_command);
+    esp_console_cmd_t drift_command = {
+        .command = "drift",
+        .help = "drift <minutes 1..600>",
+        .func = drift_cli_handler,
+    };
+    esp_console_cmd_register(&drift_command);
     return 0;
 }
 #endif
@@ -178,6 +495,8 @@ static void image_database_init()
     image_database[7] = (uint8_t *) image7_start;
     image_database[8] = (uint8_t *) image8_start;
     image_database[9] = (uint8_t *) image9_start;
+    image_database[10] = (uint8_t *) image10_start;
+    image_database[11] = (uint8_t *) image11_start;
 #endif
 }
 
