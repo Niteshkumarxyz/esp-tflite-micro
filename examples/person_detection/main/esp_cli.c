@@ -119,13 +119,29 @@ static int inference_cli_handler(int argc, char *argv[])
         ESP_LOGE(TAG, "Please Enter a valid Number ( 0 - %d)", IMAGE_COUNT-1);
         return -1;
     }
-   // char file_name[30];
-   // sprintf(file_name, "image%d.raw", image_number);
-    unsigned detect_time;
-    detect_time = esp_timer_get_time();
+    // char file_name[30];
+    // sprintf(file_name, "image%d.raw", image_number);
+    int64_t start_us = esp_timer_get_time();
+
     run_inference((void *)image_database[image_number]);
-    detect_time = (esp_timer_get_time() - detect_time)/1000;
-    ESP_LOGI(TAG,"Time required for the inference is %u ms", detect_time);
+
+    unsigned detect_time =
+        (unsigned)((esp_timer_get_time() - start_us) / 1000);
+
+    if (!g_last_invoke_ok) {
+        printf("IMAGE_RESULT,image=%d,invoke_ok=0,latency_ms=%u\n",
+               image_number, detect_time);
+        return 1;
+    }
+
+    printf("IMAGE_RESULT,image=%d,invoke_ok=1,person_raw_int8=%d,"
+           "no_person_raw_int8=%d,latency_ms=%u\n",
+           image_number,
+           (int)g_last_raw_person,
+           (int)g_last_raw_no_person,
+           detect_time);
+
+    ESP_LOGI(TAG, "Time required for the inference is %u ms", detect_time);
 
     return 0;
 }

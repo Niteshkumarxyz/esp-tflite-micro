@@ -28,3 +28,7 @@ target_compile_definitions(${COMPONENT_LIB} PRIVATE
     COLLECT_CPU_STATS=1
     CLI_ONLY_INFERENCE=1
 )
+# Enable application-side trace support only for explicitly requested diagnostic builds.
+if(DEFINED ENV{TFLM_RQ1_TRACE_BUILD} AND "$ENV{TFLM_RQ1_TRACE_BUILD}" STREQUAL "1")
+    target_compile_definitions(${COMPONENT_LIB} PRIVATE TFLM_RQ1_TRACE)
+endif()

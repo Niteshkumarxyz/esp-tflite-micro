@@ -116,6 +116,11 @@ idf_component_register(
             REQUIRES ${pub_req}
             PRIV_REQUIRES ${priv_req})
 
+# Enable tensor tracing only for explicitly requested diagnostic builds.
+if(DEFINED ENV{TFLM_RQ1_TRACE_BUILD} AND "$ENV{TFLM_RQ1_TRACE_BUILD}" STREQUAL "1")
+    target_compile_definitions(${COMPONENT_LIB} PRIVATE TFLM_RQ1_TRACE)
+endif()
+
 # Reduce the level of paranoia to be able to compile TF sources
 target_compile_options(${COMPONENT_LIB} PRIVATE
   -Wno-error=attributes
