@@ -1,0 +1,39 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261021200343
+Username: NITESH\nk947
+RunAs User: NITESH\nk947
+Configuration Name: 
+Machine: NITESH (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -NoExit -File C:\Espressif\tools\Microsoft.v6.0.3.PowerShell_profile.ps1
+Process ID: 18700
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\examples\person_detection\w1_benchmark_100run_2026-10-21_raw.txt
+
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) (host-venv) PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+At line:1 char:13
++ (host-venv) PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tf ...
++             ~~
+Unexpected token 'PS' in expression or statement.
+At line:1 char:13
++ (host-venv) PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tf ...
++             ~~
+Unexpected token 'PS' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261021200957
+**********************

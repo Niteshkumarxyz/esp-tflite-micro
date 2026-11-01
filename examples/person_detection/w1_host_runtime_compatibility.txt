@@ -1,0 +1,11 @@
+﻿Date: 2026-10-20
+Model: person_detect.tflite
+Model size: 300568 bytes
+SHA-256: 808CFDFC0CF3A6FA6F6FA26BFA379EA97C16D5DB7334637766E39C3408502E9D
+TensorFlow: 2.21.0
+LiteRT: 2.3.0
+Result: Both host interpreters failed during tensor allocation.
+Error: quantized_dimension must be in range [0, 1). Was 3.
+Affected tensors: 33, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84.
+ESP32 result: Successful inference on 10 bundled images.
+Interpretation: Host compatibility issue observed; numerical equivalence remains untested.

@@ -1,0 +1,30 @@
+W1 1,000-run benchmark: cross-check note (written 2026-10-22)
+
+Files in this folder (copied byte-for-byte from the evidence zip supplied in chat; hashes re-checked 2026-10-22):
+  Person_Detection_ESP32_Benchmark_1000_Transcript_2026-10-21.txt  36150 B  a7f59ff61b06d5320853d3e2c442aaded0cc239739305ba64ebd77bfc9863e82
+  Person_Detection_ESP32_Benchmark_1000_Samples_2026-10-21.csv     23961 B  6dab3f13e5b360d8a09f7e5ba9e5fe5df3cb6e4101d573e8cd561e301ee3286a
+  Person_Detection_ESP32_Benchmark_1000_Summary_2026-10-21.txt      1572 B  186d517c59f86c5d929a1675cc8e185faec7cbfb50b11d6df6751a67350a67bc
+  Person_Detection_ESP32_Benchmark_1000_Manifest_2026-10-21.csv      423 B  dccc86b7a99e211f4dcd7432ee71fde98f067cd37a3ef22b93cb5b2f9603d347
+All three hashes listed in the manifest match.
+
+Provenance: the transcript is ESP-IDF monitor output pasted into chat (command "benchmark 1000"), not a script-captured serial file.
+
+Checks:
+1. Samples CSV equals the 1,000 BENCH_SAMPLE lines of the transcript row for row.
+2. Line formats match printf strings in main/esp_cli.c (pre-cycle-count version: no cycles field).
+3. Recomputed stats: mean 401644.652 us, median 401644.5 us, P95 nearest-rank 401726 us,
+   min 401554 us, max 401729 us, SD 66.5 us, failures 0. Integer mean and (a+b)/2 median
+   reproduce the firmware BENCH_SUMMARY line exactly (mean_us=401644, median_us=401644).
+4. Outputs constant per image over 100 repeats each: img0 115/-115, img1 -39/39, img2 115/-115,
+   img3 67/-67, img4 111/-111, img5 -100/100, img6 97/-97, img7 -98/98, img8 114/-114, img9 83/-83.
+   Identical to the R1, R2A and R2 100-run captures of 21-22 Oct.
+5. Timings repeat with period 20 (only sample 1 differs, by 2 us). Distribution is bimodal:
+   500 samples in 401554-401601 us, 500 in 401688-401729 us; the median falls in the gap.
+6. Same pattern as the laptop's raw monitor log log.person_detection.20261021202454.txt (100-run,
+   same day, ELF 767211C1...): after a 10-sample phase shift, correlation 0.997, max difference 9 us.
+7. Same pattern as the 22 Oct cycle-instrumented optimised capture: correlation 0.999, offset +32 us.
+   Latency level (~401.6 ms) identifies the configuration as ESP-NN optimised (R2).
+
+Discrepancy: chapter versions dated 20 Oct quote a different 1,000-run (mean 401624, median 401627,
+P95 401655, min 401586, max 401657 us). No raw file for those numbers was found on this laptop, and
+they cannot come from this file (350 samples lie below 401586 and 500 above 401657).

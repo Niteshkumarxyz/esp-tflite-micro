@@ -1,0 +1,55 @@
+{
+  "run_id": "20261029_174934",
+  "script_version": 2,
+  "keep_awake_requested": true,
+  "pc_gaps_over_90s": [],
+  "port": "COM5",
+  "minutes": 60,
+  "inputs_sha256": {
+    "bin": "8ef30ef85a4bedd393be0891b0598857bb305c059f4d323ecb95e4bc37934c03",
+    "elf": "6e944ae8299cb08fbd247a8e842d860d87e5d59242bf4cb00fefebcc8c63a694",
+    "sdkconfig": "08f6a77c762fc2b005deef1baf55038cf77e16c00d7f41c7327800c31c1e8328"
+  },
+  "raw_log": "skip_nudge_drift_60min_serial_raw_20261029_174934.txt",
+  "raw_log_sha256": "a45e12e8a85b94508f3931692966a0f2b9b3cd311c9149a7f63d81ba15a25bf6",
+  "audit_pass": true,
+  "checks": {
+    "Flash: return code 0, 4 x 'Hash of data verified', app image written at 0x20000": true,
+    "Boot banner ELF SHA-256 prefix matches the skip-nudge ELF": true,
+    "DRIFT_PREP and DRIFT_START present": true,
+    "Timing boundary is interpreter_Invoke_only": true,
+    "Exactly 60 minute samples": true,
+    "Minute and elapsed-second sequence valid": true,
+    "DRIFT_END completed = requested = 60, elapsed 3600 s": true,
+    "Sum of minute runs equals DRIFT_END total_runs": true,
+    "Zero failures": true,
+    "Zero output mismatches": true,
+    "Zero latency-overflow minutes": true,
+    "Free and minimum internal memory constant": true
+  },
+  "stats": {
+    "samples": 60,
+    "total_runs": 8999,
+    "mean_of_minute_means_us": 391104.317,
+    "run_weighted_mean_us": 391104.317,
+    "minute_mean_range_us": [
+      391103.0,
+      391105.0
+    ],
+    "mean_of_minute_p95_us": 391191.5,
+    "min_of_minute_minima_us": 391015.0,
+    "max_of_minute_maxima_us": 391197.0,
+    "mean_cycles_range": [
+      93864487.0,
+      93864910.0
+    ],
+    "free_internal_bytes": [
+      128720
+    ],
+    "free_spiram_bytes": [
+      0
+    ],
+    "first10_mean_us": 391104.4,
+    "last10_mean_us": 391104.0
+  }
+}

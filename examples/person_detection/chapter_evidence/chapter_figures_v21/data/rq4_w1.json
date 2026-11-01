@@ -1,0 +1,153 @@
+{
+ "hash_convention_images_matching": 9,
+ "rows": [
+  {
+   "image": 0,
+   "D": 115,
+   "S": 115,
+   "S_out_differs": false,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": false,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 1,
+   "D": -39,
+   "S": -31,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 2,
+   "D": 115,
+   "S": 115,
+   "S_out_differs": false,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": false,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 3,
+   "D": 67,
+   "S": 57,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 4,
+   "D": 111,
+   "S": 111,
+   "S_out_differs": false,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": false,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 5,
+   "D": -100,
+   "S": -101,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 6,
+   "D": 97,
+   "S": 98,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 7,
+   "D": -98,
+   "S": -97,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 8,
+   "D": 114,
+   "S": 114,
+   "S_out_differs": false,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": false,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 9,
+   "D": 83,
+   "S": 81,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 10,
+   "D": 113,
+   "S": 113,
+   "S_out_differs": false,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": false,
+   "X_out_equals_S": true
+  },
+  {
+   "image": 11,
+   "D": -57,
+   "S": -59,
+   "S_out_differs": true,
+   "S_first_op": 0,
+   "X_first_op": 0,
+   "X_out_differs": true,
+   "X_out_equals_S": false
+  }
+ ],
+ "S_output_changes": 7,
+ "X_output_changes": 7,
+ "output_level_detect": {
+  "1": {
+   "S": 0.5833333333333333,
+   "X": 0.5833333333333333
+  },
+  "2": {
+   "S": 0.8484848484848485,
+   "X": 0.8484848484848485
+  },
+  "3": {
+   "S": 0.9545454545454546,
+   "X": 0.9545454545454546
+  },
+  "4": {
+   "S": 0.98989898989899,
+   "X": 0.98989898989899
+  },
+  "6": {
+   "S": 1.0,
+   "X": 1.0
+  }
+ },
+ "tensor_level_detect_any_single_image": {
+  "S": true,
+  "X": true
+ }
+}

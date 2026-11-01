@@ -1,0 +1,7 @@
+# Place ESP-NN's optimized convolution and depthwise convolution kernels in IRAM instead of flash,
+# so that their instructions are no longer fetched through the flash cache.
+[mapping:rq3_esp_nn_kernels_in_iram]
+archive: libespressif__esp-nn.a
+entries:
+    esp_nn_conv_opt (noflash)
+    esp_nn_depthwise_conv_opt (noflash)

@@ -1,0 +1,78 @@
+{
+ "per_tensor": {
+  "bytes": 7392,
+  "sha256": "3f449cb31079eaa08c14c1e553029b7dbe60eb95dd70d85856c72b851a2fd3f5",
+  "ops": [
+   "DELEGATE",
+   "FULLY_CONNECTED"
+  ],
+  "weight_scale_counts": [
+   [
+    "tfl.pseudo_qconst1",
+    [
+     2,
+     64
+    ],
+    1
+   ],
+   [
+    "tfl.pseudo_qconst3",
+    [
+     64,
+     64
+    ],
+    1
+   ],
+   [
+    "tfl.pseudo_qconst5",
+    [
+     64,
+     7
+    ],
+    1
+   ]
+  ],
+  "input_scale": 0.003921568859368563,
+  "input_zero_point": -128,
+  "output_scale": 0.01989664137363434,
+  "output_zero_point": -54
+ },
+ "per_channel": {
+  "bytes": 10448,
+  "sha256": "097181e6d45f1b186ea3720ab77960981f62449275174079b7be02a8138031c2",
+  "ops": [
+   "DELEGATE",
+   "FULLY_CONNECTED"
+  ],
+  "weight_scale_counts": [
+   [
+    "tfl.pseudo_qconst1",
+    [
+     2,
+     64
+    ],
+    2
+   ],
+   [
+    "tfl.pseudo_qconst3",
+    [
+     64,
+     64
+    ],
+    64
+   ],
+   [
+    "tfl.pseudo_qconst5",
+    [
+     64,
+     7
+    ],
+    64
+   ]
+  ],
+  "input_scale": 0.003921568859368563,
+  "input_zero_point": -128,
+  "output_scale": 0.01989664137363434,
+  "output_zero_point": -54
+ }
+}

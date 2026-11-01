@@ -1,0 +1,60 @@
+{
+ "stress": {
+  "obs_noise": 0.05,
+  "us_noise": 0.04,
+  "slip": 0.15,
+  "us_dropout": 0.4
+ },
+ "seeds": [
+  5000,
+  5999
+ ],
+ "model": "per_tensor",
+ "TFLM_reference_double_rounding": {
+  "success": 946,
+  "n": 1000,
+  "mean_rms_xte_m": 0.02417203766447516,
+  "vs_double_rounding": {
+   "ref_only": 0,
+   "this_only": 0,
+   "mcnemar_p": 1.0,
+   "changed_seeds": []
+  }
+ },
+ "LiteRT_REF_single_rounding_family": {
+  "success": 944,
+  "n": 1000,
+  "mean_rms_xte_m": 0.02418328744707966,
+  "vs_double_rounding": {
+   "ref_only": 4,
+   "this_only": 2,
+   "mcnemar_p": 0.6875,
+   "changed_seeds": [
+    5305,
+    5457,
+    5465,
+    5507,
+    5863,
+    5964
+   ]
+  }
+ },
+ "LiteRT_XNNPACK": {
+  "success": 944,
+  "n": 1000,
+  "mean_rms_xte_m": 0.02418328744707966,
+  "vs_double_rounding": {
+   "ref_only": 4,
+   "this_only": 2,
+   "mcnemar_p": 0.6875,
+   "changed_seeds": [
+    5305,
+    5457,
+    5465,
+    5507,
+    5863,
+    5964
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+W1 ESP-NN vs Reference Kernels Performance Comparison
+Date: 2026-10-20
+ESP-IDF: 6.0.3
+Target: ESP32-D0WD-V3, CPU 240 MHz
+ESP-NN version: 1.4.1
+
+ESP-NN retest observations: 10
+ESP-NN average inference: 403682.6 us
+Reference average inference: 4142992.8 us
+Speedup: 10.26x
+Inference-time reduction: 90.26%
+Raw outputs: Identical for the 10 bundled test images
+
+Limitations:
+- Results cover the bundled test images only.
+- Output equivalence does not establish general model accuracy.
+- Host runtime allocation remains incompatible with this model's bias quantization metadata.

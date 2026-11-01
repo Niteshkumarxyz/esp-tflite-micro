@@ -1,0 +1,19 @@
+﻿Runtime: R1 Reference
+Capture date: 2026-10-24
+Firmware SHA256: 39D2283D8DEDF17926FED525965F03AD5E75F7D7373353E87B4FF9FFC76CEBDB
+
+Image 10:
+INVOKE_US=4139791
+FC time = 0
+DC time = 625
+conv time = 3513
+RAW_OUTPUT_INT8=113,-113
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=4153
+
+Image 11:
+INVOKE_US=4139772
+FC time = 0
+DC time = 625
+conv time = 3513
+RAW_OUTPUT_INT8=-57,57
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=4153

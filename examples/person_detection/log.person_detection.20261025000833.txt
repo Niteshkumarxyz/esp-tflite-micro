@@ -1,0 +1,28 @@
+
+esp> detect_image 10
+
+INVOKE_US=528378
+FC time = 0
+DC time = 136
+conv time = 391
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=542
+[0;32mI (90577) [esp_cli]: Time required for the inference is 542 ms[0m
+esp> detect_image 11
+
+INVOKE_US=528315
+FC time = 0
+DC time = 136
+conv time = 391
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=542
+[0;32mI (97647) [esp_cli]: Time required for the inference is 542 ms[0m
+esp> 

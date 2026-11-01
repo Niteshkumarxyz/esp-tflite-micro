@@ -1,0 +1,16 @@
+{
+ "model": "per_channel",
+ "stress": {
+  "obs_noise": 0.05,
+  "us_noise": 0.04,
+  "slip": 0.15,
+  "us_dropout": 0.4
+ },
+ "double_success": 947,
+ "opt_success": 947,
+ "identical_trajectories": 995,
+ "double_only": 0,
+ "opt_only": 0,
+ "mcnemar_p": 1.0,
+ "changed_seeds": []
+}

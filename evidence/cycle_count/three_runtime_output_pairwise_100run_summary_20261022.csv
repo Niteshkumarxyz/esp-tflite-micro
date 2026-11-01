@@ -1,0 +1,4 @@
+Pair,Runs_Compared,Matched_Rows,Mismatched_Rows,Rows_Bit_Exact_Pct,Images_Represented,Images_Matching_All_Repeats,Unique_Images_Matching_Pct,Result,Scope
+R1_reference vs R2A_ANSI_C,100,100,0,100,10,10,100.0,MATCH,10 bundled images cycled; not unique-image validation
+R2A_ANSI_C vs R2_ESP_NN_optimized,100,100,0,100,10,10,100.0,MATCH,10 bundled images cycled; not unique-image validation
+R1_reference vs R2_ESP_NN_optimized,100,100,0,100,10,10,100.0,MATCH,10 bundled images cycled; not unique-image validation

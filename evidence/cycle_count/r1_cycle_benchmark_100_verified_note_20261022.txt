@@ -1,0 +1,12 @@
+R1 cycle-count benchmark capture note
+Date: 2026-10-22
+Status: PASS; complete newline-terminated BENCH_SUMMARY received
+Port: COM5 at 115200 baud
+Firmware binary SHA256: b7bc64fb4e941458f81a23e36115560198bb5e486c5f25613d7919d4f7946758
+Raw log SHA256: fdab3d7ed3885730b53b6409a605b83be9d3a398589d0337857f1a870633a0e3
+Measured samples: 100
+Warm-up runs: 10
+Failures (ok != 1): 0
+Input sequence: 10 demo images cycled repeatedly; not 100 unique images
+Timing region: interpreter_Invoke_only
+Firmware summary: BENCH_SUMMARY,runs=100,failures=0,mean_us=4141136,median_us=4141137,p95_nearest_rank_us=4141214,min_us=4141050,max_us=4141224

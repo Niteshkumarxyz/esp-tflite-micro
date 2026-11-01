@@ -1,0 +1,6 @@
+dependencies:
+  espressif/esp-tflite-micro:
+    version: "*"
+    override_path: "../../../"
+  # Pinned to the version used by every person_detection build in this study.
+  espressif/esp-nn: "==1.4.1"

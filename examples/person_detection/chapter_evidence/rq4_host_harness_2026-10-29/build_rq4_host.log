@@ -1,0 +1,4 @@
+ar: creating gen_rq4/linux_x86_64_default_gcc/lib/libtensorflow-microlite.a
+HOST_DR_RC=0
+ar: creating gen_rq4_sr/linux_x86_64_default_gcc/lib/libtensorflow-microlite.a
+HOST_SR_RC=0

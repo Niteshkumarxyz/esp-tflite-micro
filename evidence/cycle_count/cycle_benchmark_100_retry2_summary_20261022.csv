@@ -1,0 +1,2 @@
+port,baud,runs,warmup_runs,images_reported_by_firmware,timing_method,failures,mean_us,median_us,p95_nearest_rank_us,min_us,max_us,mean_cycles,median_cycles,p95_nearest_rank_cycles,min_cycles,max_cycles,firmware_summary_line
+COM5,115200,100,10,10,interpreter_Invoke_only,0,401676.65,401678.0,401760,401585,401762,96401987.33,96402384.5,96421892,96379922,96422540,"BENCH_SUMMARY,runs=100,failures=0,mean_us=401676,median_us=401678,p95_nearest_rank_us=401760,min_us=401585,max_us=401762"

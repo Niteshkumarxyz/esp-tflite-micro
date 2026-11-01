@@ -1,0 +1,24 @@
+﻿Test: Host vs ESP32 raw INT8 comparison
+Date: 2026-10-21
+Board: ESP32-D0WD-V3, revision v3.1
+ESP-IDF: v6.0.3
+CPU Frequency: 240 MHz
+Input Tensor: INT8, 1x96x96x1
+Tensor Arena Configured: 163840 bytes
+Tensor Arena Used at boot: 82300 bytes
+
+Test 1: Person image (image10)
+Host expected raw output (person, no_person): 113, -113
+ESP32 raw output (person, no_person): 113, -113
+INVOKE_US: 401660
+Reported total inference time: 416 ms
+Result: Exact raw-output match
+
+Test 2: No-person image (image11)
+Host expected raw output (person, no_person): -57, 57
+ESP32 raw output (person, no_person): -57, 57
+INVOKE_US: 401611
+Reported total inference time: 416 ms
+Result: Exact raw-output match
+
+Note: Two matched test inputs only. This does not establish full-dataset equivalence.

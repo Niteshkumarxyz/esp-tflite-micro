@@ -1,0 +1,215 @@
+{
+  "run_id": "20261101_145649",
+  "runs_per_benchmark": 1000,
+  "requant_on_chip": {
+    "random_acc_below_2^26": {
+      "set": "random_acc_below_2^26",
+      "cases": "1000000",
+      "differ": "0",
+      "at_int32_max_overflow": "0"
+    },
+    "random_acc_below_2^29": {
+      "set": "random_acc_below_2^29",
+      "cases": "1000000",
+      "differ": "0",
+      "at_int32_max_overflow": "0"
+    },
+    "random_any_int32": {
+      "set": "random_any_int32",
+      "cases": "1000000",
+      "differ": "6126",
+      "at_int32_max_overflow": "6126"
+    },
+    "exact_multiply_ties_acc_below_2^26": {
+      "set": "exact_multiply_ties_acc_below_2^26",
+      "cases": "3328000",
+      "differ": "0",
+      "at_int32_max_overflow": "0"
+    },
+    "exact_shift_ties": {
+      "set": "exact_shift_ties",
+      "cases": "600000",
+      "differ": "0",
+      "at_int32_max_overflow": "0"
+    },
+    "near_int32_max": {
+      "set": "near_int32_max",
+      "cases": "120",
+      "differ": "115",
+      "at_int32_max_overflow": "115"
+    }
+  },
+  "builds": {
+    "pre_flash": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\rq3_layout_pre_2026-11-01\\build_pre_flash",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c098",
+        "conv_kernel": "0x400e8230",
+        "conv_kernel_size": "0x4b2",
+        "depthwise_kernel": "0x400e8dd8",
+        "depthwise_kernel_size": "0x7f4"
+      },
+      "files": {
+        "bin": "621c35f7052ec7473e3edfcee5de0e42f666937084ce2cad5f761bb0de8f3707",
+        "bin_bytes": 674544,
+        "elf": "c3ec508d6e8ecddde1ce6d87a333441e54a6b406c6ec09e1523f0db5fb3c61f9",
+        "elf_bytes": 10465888
+      },
+      "reproduces": "orig_pre",
+      "layout_reproduced": true
+    },
+    "post_flash": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\rq3_layout_post_2026-11-01\\build_post_flash",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c418",
+        "conv_kernel": "0x400e8858",
+        "conv_kernel_size": "0x4b2",
+        "depthwise_kernel": "0x400e9400",
+        "depthwise_kernel_size": "0x7f4"
+      },
+      "files": {
+        "bin": "0fe06b9c34556687042a50e006cfe6e4b8df83f1f3e21c391d4672b5629d0ae6",
+        "bin_bytes": 677376,
+        "elf": "3df038997e82a3d812a5385319c0b901deaf11955a44e41aeaf532285aa86c2b",
+        "elf_bytes": 10483224
+      },
+      "reproduces": "orig_post",
+      "layout_reproduced": true
+    },
+    "sn_flash": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\rq3_layout_post_2026-11-01\\build_sn_flash",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c418",
+        "conv_kernel": "0x400e8828",
+        "conv_kernel_size": "0x446",
+        "depthwise_kernel": "0x400e91e0",
+        "depthwise_kernel_size": "0x686"
+      },
+      "files": {
+        "bin": "4ce4f62d08095232d554f138776cce928ec50ce9075ff71b990e8b3cdfced813",
+        "bin_bytes": 676464,
+        "elf": "c94bde462c88c55dde8f54a7e55246acbc8551a1c293101eba86c2a68a451d33",
+        "elf_bytes": 10469344
+      },
+      "reproduces": "orig_sn",
+      "layout_reproduced": true
+    },
+    "pre_iram": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\rq3_layout_pre_2026-11-01\\build_pre_iram",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c098",
+        "conv_kernel": "0x40086b84",
+        "conv_kernel_size": "0x4b2",
+        "depthwise_kernel": "0x4008773c",
+        "depthwise_kernel_size": "0x7f4"
+      },
+      "files": {
+        "bin": "356bd75d0e0d081ff0834046b550d7636b6eb64ba2d2d248f8f04b67a0586b36",
+        "bin_bytes": 674544,
+        "elf": "a08a616c551b11a53bae23d4e806c411dd9b632bc397e4c6cd408894d4cf204b",
+        "elf_bytes": 10465888
+      },
+      "reproduces": null,
+      "layout_reproduced": null
+    },
+    "post_iram": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\rq3_layout_post_2026-11-01\\build_post_iram",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c418",
+        "conv_kernel": "0x40086bc8",
+        "conv_kernel_size": "0x4b2",
+        "depthwise_kernel": "0x40087780",
+        "depthwise_kernel_size": "0x7f4"
+      },
+      "files": {
+        "bin": "71522f587c47f81398f9c342767f652612e879f360af6fe01cb5a98c479bc16f",
+        "bin_bytes": 677376,
+        "elf": "903eec84c6165247d0a3c0792c5f753e9451e8040ae01a9faef10a8eba14ee93",
+        "elf_bytes": 10479128
+      },
+      "reproduces": null,
+      "layout_reproduced": null
+    },
+    "sn_iram": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\rq3_layout_post_2026-11-01\\build_sn_iram",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c418",
+        "conv_kernel": "0x40086b94",
+        "conv_kernel_size": "0x446",
+        "depthwise_kernel": "0x4008755c",
+        "depthwise_kernel_size": "0x686"
+      },
+      "files": {
+        "bin": "6ad42fcce6b4d6b5a1398331daa7f1df451b3aa71f665823f302b9e8ae3a076a",
+        "bin_bytes": 676464,
+        "elf": "c0937c76c803f0965c0971aaa98be4cf0326b6bfb22440e08b8f2adbe9f480ec",
+        "elf_bytes": 10469344
+      },
+      "reproduces": null,
+      "layout_reproduced": null
+    },
+    "orig_pre": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\person_detection\\build_cycle_optimized_20261021",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c098",
+        "conv_kernel": "0x400e8230",
+        "conv_kernel_size": "0x4b2",
+        "depthwise_kernel": "0x400e8dd8",
+        "depthwise_kernel_size": "0x7f4"
+      },
+      "files": {
+        "bin": "b13cfaa2f117215b6f081fac2a8c8faa13bf559f94cd5abc67566019ced2b035",
+        "bin_bytes": 674544,
+        "elf": "4cf8937218566118686a996d2c26387690adb778becb79727d0867bbeb840051",
+        "elf_bytes": 10465592
+      },
+      "reproduces": null,
+      "layout_reproduced": null
+    },
+    "orig_post": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\person_detection\\build_b5_normal_r2_notrace_2026-10-28",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c418",
+        "conv_kernel": "0x400e8858",
+        "conv_kernel_size": "0x4b2",
+        "depthwise_kernel": "0x400e9400",
+        "depthwise_kernel_size": "0x7f4"
+      },
+      "files": {
+        "bin": "b553e691eec17e8e3dc1b1b39b4acab686aa90faffa6a6c1a6a0271f8fee2df0",
+        "bin_bytes": 677376,
+        "elf": "d46c5e2ead50356a278b36d20b0d1e526f8adfd56ebfb136518d15cc0bc1d418",
+        "elf_bytes": 10482896
+      },
+      "reproduces": null,
+      "layout_reproduced": null
+    },
+    "orig_sn": {
+      "dir": "C:\\Users\\nk947\\Downloads\\robot-runtime-research\\esp-tflite-micro\\examples\\person_detection\\build_b5_skip_nudge_notrace_2026-10-28",
+      "info": {
+        "map": "person_detection.map",
+        "model_array": "0x3f40c418",
+        "conv_kernel": "0x400e8828",
+        "conv_kernel_size": "0x446",
+        "depthwise_kernel": "0x400e91e0",
+        "depthwise_kernel_size": "0x686"
+      },
+      "files": {
+        "bin": "8ef30ef85a4bedd393be0891b0598857bb305c059f4d323ecb95e4bc37934c03",
+        "bin_bytes": 676464,
+        "elf": "6e944ae8299cb08fbd247a8e842d860d87e5d59242bf4cb00fefebcc8c63a694",
+        "elf_bytes": 10469016
+      },
+      "reproduces": null,
+      "layout_reproduced": null
+    }
+  }
+}

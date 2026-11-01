@@ -1,0 +1,12 @@
+{
+ "label": "R2",
+ "model": "per_tensor",
+ "open_loop_match": "double_rounding_family (TFLM reference, CMSIS-NN, Arm builds)",
+ "identity": "ID app_elf_sha256=51362d819 kernels=R2_ESP_NN_OPTIMIZED idf=v6.0.3 model=per_tensor model_len=7392 model_fnv1a=f56ff1d5 model_sha256=3f449cb31079eaa08c14c1e553029b7dbe60eb95dd70d85856c72b851a2fd3f5 arena_used=812 cpu_mhz=240",
+ "identity_before_model_select": "ID app_elf_sha256=51362d819 kernels=R2_ESP_NN_OPTIMIZED idf=v6.0.3 model=per_tensor model_len=7392 model_fnv1a=f56ff1d5 model_sha256=3f449cb31079eaa08c14c1e553029b7dbe60eb95dd70d85856c72b851a2fd3f5 arena_used=812 cpu_mhz=240",
+ "bench": "BENCH n=10000 mean_us=298.736 mean_cycles=71589.4",
+ "open_loop_actions_sha256": "2cb39782655ef333b720eb4519de07123a49610b7c2305d896d7c88d4e1e56e4",
+ "success": 199,
+ "episodes": 200,
+ "mean_rms_xte_m": 0.016548788460464224
+}

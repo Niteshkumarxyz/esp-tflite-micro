@@ -1,0 +1,2 @@
+﻿"Comparison","SamplesPerRuntime","R1MeanUsExact","OptimizedMeanUsExact","Speedup","MeanLatencyReductionPercent","R1P95Us","OptimizedP95Us","R1Failures","OptimizedFailures","Qualification"
+"Fresh matched R1 Reference vs Optimized ESP-NN","1000","4139732.102","412499.952","10.0357","90.036","4139747","412580","0","0","One ESP32, 240 MHz, Invoke-only timing, ten bundled images cycled. Not a unique-image accuracy result."

@@ -1,0 +1,3 @@
+﻿Evidence,File,SHA256,Samples,Notes
+hello_world_cycle_count,examples/hello_world/cycle_count_raw_log.txt,ACEE0D2BC5C3E6B70698AF9BFABED21339018EDF0FC1D582839890D66748D069,830,Raw ESP-IDF monitor log
+hello_world_cycle_count,examples/hello_world/cycle_count_measurements.csv,73E2B19AED9B0A8FAFE514F4717F36E2385462FFA0144232E9C187CD9F656BAA,830,Derived CSV; first sample flagged separately

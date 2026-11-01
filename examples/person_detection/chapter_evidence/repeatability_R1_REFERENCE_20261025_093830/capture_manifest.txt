@@ -1,0 +1,12 @@
+runtime=R1_REFERENCE
+capture_started_utc=2026-10-25T04:08:30.714404+00:00
+capture_completed_utc=2026-10-25T04:09:57.235597+00:00
+serial_port=COM5
+baud=115200
+runs_per_image=10
+images=10,11
+firmware_bin=C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\chapter_evidence\r1_reference_images10_11_2026-10-24\person_detection_r1_reference.bin
+firmware_sha256=39D2283D8DEDF17926FED525965F03AD5E75F7D7373353E87B4FF9FFC76CEBDB
+raw_log_sha256=96D8565C02CEC92124C946CAF64B660C7B71EC22D1676ABDC347F7CB919CDCF2
+trial_results_sha256=44E9F31A04F9517DD02EA0B32836FE5C94EABF1D4E195A9904CE9EF29E989F2B
+runtime_summary_sha256=99E8B971B234F055FB39F9262DC21237C26D8B81D7ECD764E2599FDF3522ED1F

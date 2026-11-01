@@ -1,0 +1,48 @@
+COMMAND=detect_image 10
+FIRMWARE_SHA256=F70EA1D4FF93289BB32BB3C89B20A70C3C232264B1B9B3793BEC43EB94D9F4BE
+ 
+esp> detect_image 10
+
+RQ1_TRACE,run=10,op=0,tensor=34,n=18432,min=-128,max=127,sum=-1903317,fnv1a=5067d8ca
+RQ1_TRACE,run=10,op=1,tensor=51,n=18432,min=-128,max=127,sum=-1463116,fnv1a=9edcddff
+RQ1_TRACE,run=10,op=2,tensor=54,n=36864,min=-128,max=127,sum=-4040579,fnv1a=72e1c6d0
+RQ1_TRACE,run=10,op=3,tensor=55,n=9216,min=-128,max=127,sum=-835032,fnv1a=71710e15
+RQ1_TRACE,run=10,op=4,tensor=58,n=18432,min=-128,max=127,sum=-1778499,fnv1a=81646a74
+RQ1_TRACE,run=10,op=5,tensor=59,n=18432,min=-128,max=127,sum=-1820838,fnv1a=876de641
+RQ1_TRACE,run=10,op=6,tensor=62,n=18432,min=-128,max=127,sum=-1921049,fnv1a=ea2238e0
+RQ1_TRACE,run=10,op=7,tensor=63,n=4608,min=-128,max=127,sum=-411072,fnv1a=abebe913
+RQ1_TRACE,run=10,op=8,tensor=66,n=9216,min=-128,max=122,sum=-913657,fnv1a=a91fdf86
+RQ1_TRACE,run=10,op=9,tensor=67,n=9216,min=-128,max=127,sum=-940184,fnv1a=90e79447
+RQ1_TRACE,run=10,op=10,tensor=70,n=9216,min=-128,max=78,sum=-976905,fnv1a=690c7e72
+RQ1_TRACE,run=10,op=11,tensor=71,n=2304,min=-128,max=103,sum=-221272,fnv1a=62aa1c33
+RQ1_TRACE,run=10,op=12,tensor=74,n=4608,min=-128,max=37,sum=-476546,fnv1a=8356f2cd
+RQ1_TRACE,run=10,op=13,tensor=75,n=4608,min=-128,max=101,sum=-494865,fnv1a=800f9e10
+RQ1_TRACE,run=10,op=14,tensor=78,n=4608,min=-128,max=46,sum=-499822,fnv1a=539817cb
+RQ1_TRACE,run=10,op=15,tensor=79,n=4608,min=-128,max=119,sum=-502546,fnv1a=916af0c5
+RQ1_TRACE,run=10,op=16,tensor=82,n=4608,min=-128,max=38,sum=-506950,fnv1a=a6c91c5b
+RQ1_TRACE,run=10,op=17,tensor=83,n=4608,min=-128,max=115,sum=-516127,fnv1a=743c2ee6
+RQ1_TRACE,run=10,op=18,tensor=86,n=4608,min=-128,max=42,sum=-500159,fnv1a=c072e274
+RQ1_TRACE,run=10,op=19,tensor=35,n=4608,min=-128,max=102,sum=-522537,fnv1a=4d3ff844
+RQ1_TRACE,run=10,op=20,tensor=38,n=4608,min=-128,max=93,sum=-505759,fnv1a=2e0ffaa6
+RQ1_TRACE,run=10,op=21,tensor=39,n=4608,min=-128,max=127,sum=-520303,fnv1a=3f3c8002
+RQ1_TRACE,run=10,op=22,tensor=42,n=4608,min=-128,max=49,sum=-503293,fnv1a=908d0e64
+RQ1_TRACE,run=10,op=23,tensor=43,n=1152,min=-128,max=103,sum=-129832,fnv1a=974e2c73
+RQ1_TRACE,run=10,op=24,tensor=46,n=2304,min=-128,max=90,sum=-252619,fnv1a=6e4c8098
+RQ1_TRACE,run=10,op=25,tensor=47,n=2304,min=-128,max=112,sum=-266817,fnv1a=9fff18c8
+RQ1_TRACE,run=10,op=26,tensor=50,n=2304,min=-128,max=-22,sum=-279422,fnv1a=cec8e477
+RQ1_TRACE,run=10,op=27,tensor=27,n=256,min=-128,max=-107,sum=-31055,fnv1a=455dd576
+RQ1_TRACE,run=10,op=28,tensor=28,n=2,min=-112,max=110,sum=-2,fnv1a=4260c173
+RQ1_TRACE,run=10,op=29,tensor=31,n=2,min=-112,max=110,sum=-2,fnv1a=4260c173
+RQ1_TRACE,run=10,op=30,tensor=87,n=2,min=-113,max=113,sum=0,fnv1a=5f45189d
+INVOKE_US=475347
+FC time = 0
+DC time = 87
+conv time = 313
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=489
+I (65778) [esp_cli]: Time required for the inference is 489 ms
+esp>

@@ -1,0 +1,119 @@
+Editor experiments, run 20261101_145649; IDF_PATH=C:\esp\v6.0.3\esp-idf; keep-awake: True; build and board
+
+=== Part A: skip-nudge requantize on the chip ===
+[requant] building in skipnudge_requant_test_2026-11-01/build ...
+[requant]   step 250/1019
+[requant]   step 500/1019
+[requant]   step 750/1019
+[requant]   step 1000/1019
+[requant] build return code 0 in 249 s
+[requant] flash OK (3/3 regions verified)
+  random_acc_below_2^26: 1000000 cases, 0 differ, 0 at the INT32_MAX overflow
+  random_acc_below_2^29: 1000000 cases, 0 differ, 0 at the INT32_MAX overflow
+  random_any_int32: 1000000 cases, 6126 differ, 6126 at the INT32_MAX overflow
+  exact_multiply_ties_acc_below_2^26: 3328000 cases, 0 differ, 0 at the INT32_MAX overflow
+  exact_shift_ties: 600000 cases, 0 differ, 0 at the INT32_MAX overflow
+  near_int32_max: 120 cases, 115 differ, 115 at the INT32_MAX overflow
+
+=== Part B: builds ===
+making rq3_layout_pre_2026-11-01 (21 October application files)
+making rq3_layout_post_2026-11-01 (current application files)
+[pre_flash] building in rq3_layout_pre_2026-11-01/build_pre_flash ...
+[pre_flash]   step 250/1301
+[pre_flash]   step 500/1301
+[pre_flash]   step 750/1301
+[pre_flash]   step 1000/1301
+[pre_flash]   step 1250/1301
+[pre_flash] build return code 0 in 422 s
+[pre_flash] layout reproduces orig_pre: True (model 0x3f40c098 vs 0x3f40c098, conv 0x400e8230 vs 0x400e8230, BIN 674544 vs 674544 bytes)
+[pre_flash] OK: conv 0x400e8230, depthwise 0x400e8dd8, model 0x3f40c098
+[post_flash] building in rq3_layout_post_2026-11-01/build_post_flash ...
+[post_flash]   step 250/1301
+[post_flash]   step 500/1301
+[post_flash]   step 750/1301
+[post_flash]   step 1000/1301
+[post_flash]   step 1250/1301
+[post_flash] build return code 0 in 615 s
+[post_flash] layout reproduces orig_post: True (model 0x3f40c418 vs 0x3f40c418, conv 0x400e8858 vs 0x400e8858, BIN 677376 vs 677376 bytes)
+[post_flash] OK: conv 0x400e8858, depthwise 0x400e9400, model 0x3f40c418
+[sn_flash] building in rq3_layout_post_2026-11-01/build_sn_flash ...
+[sn_flash]   step 250/1301
+[sn_flash]   step 500/1301
+[sn_flash]   step 750/1301
+[sn_flash]   step 1000/1301
+[sn_flash]   step 1250/1301
+[sn_flash] build return code 0 in 667 s
+[sn_flash] layout reproduces orig_sn: True (model 0x3f40c418 vs 0x3f40c418, conv 0x400e8828 vs 0x400e8828, BIN 676464 vs 676464 bytes)
+[sn_flash] OK: conv 0x400e8828, depthwise 0x400e91e0, model 0x3f40c418
+[pre_iram] building in rq3_layout_pre_2026-11-01/build_pre_iram ...
+[pre_iram]   step 250/1303
+[pre_iram]   step 500/1303
+[pre_iram]   step 750/1303
+[pre_iram]   step 1000/1303
+[pre_iram]   step 1250/1303
+[pre_iram] build return code 0 in 459 s
+[pre_iram] OK: conv 0x40086b84, depthwise 0x4008773c, model 0x3f40c098
+[post_iram] building in rq3_layout_post_2026-11-01/build_post_iram ...
+[post_iram]   step 250/1303
+[post_iram]   step 500/1303
+[post_iram]   step 750/1303
+[post_iram]   step 1000/1303
+[post_iram]   step 1250/1303
+[post_iram] build return code 0 in 606 s
+[post_iram] OK: conv 0x40086bc8, depthwise 0x40087780, model 0x3f40c418
+[sn_iram] building in rq3_layout_post_2026-11-01/build_sn_iram ...
+[sn_iram]   step 250/1303
+[sn_iram]   step 500/1303
+[sn_iram]   step 750/1303
+[sn_iram]   step 1000/1303
+[sn_iram]   step 1250/1303
+[sn_iram] build return code 0 in 681 s
+[sn_iram] OK: conv 0x40086b94, depthwise 0x4008755c, model 0x3f40c418
+
+=== Part B: board runs, 10 x benchmark 1000 (about 80 minutes) ===
+[orig_pre] flash OK (4/4 regions verified)
+[orig_pre] benchmark 1000 started (15:59:06); about 7 minutes
+[orig_pre] mean 401.677 ms, cycles 96.402 M, outputs 1000/1000, ELF banner matches: True
+[orig_post] flash OK (4/4 regions verified)
+[orig_post] benchmark 1000 started (16:06:25); about 7 minutes
+[orig_post] mean 412.501 ms, cycles 99.000 M, outputs 1000/1000, ELF banner matches: True
+[pre_flash] flash OK (4/4 regions verified)
+[pre_flash] benchmark 1000 started (16:13:53); about 7 minutes
+[pre_flash] mean 401.676 ms, cycles 96.402 M, outputs 1000/1000, ELF banner matches: True
+[post_flash] flash OK (4/4 regions verified)
+[post_flash] benchmark 1000 started (16:21:15); about 7 minutes
+[post_flash] mean 412.500 ms, cycles 99.000 M, outputs 1000/1000, ELF banner matches: True
+[sn_flash] flash OK (4/4 regions verified)
+[sn_flash] benchmark 1000 started (16:28:44); about 7 minutes
+[sn_flash] mean 391.103 ms, cycles 93.864 M, outputs 1000/1000, ELF banner matches: True
+[pre_iram] flash OK (4/4 regions verified)
+[pre_iram] benchmark 1000 started (16:35:51); about 7 minutes
+[pre_iram] mean 375.261 ms, cycles 90.062 M, outputs 1000/1000, ELF banner matches: True
+[post_iram] flash OK (4/4 regions verified)
+[post_iram] benchmark 1000 started (16:42:39); about 7 minutes
+[post_iram] mean 375.272 ms, cycles 90.065 M, outputs 1000/1000, ELF banner matches: True
+[sn_iram] flash OK (4/4 regions verified)
+[sn_iram] benchmark 1000 started (16:49:27); about 7 minutes
+[sn_iram] mean 356.459 ms, cycles 85.550 M, outputs 1000/1000, ELF banner matches: True
+[orig_pre] flash OK (4/4 regions verified)
+[orig_pre] benchmark 1000 started (16:55:54); about 7 minutes
+[orig_pre] mean 401.677 ms, cycles 96.402 M, outputs 1000/1000, ELF banner matches: True
+[orig_post] flash OK (4/4 regions verified)
+[orig_post] benchmark 1000 started (17:03:12); about 7 minutes
+[orig_post] mean 412.500 ms, cycles 99.000 M, outputs 1000/1000, ELF banner matches: True
+
+=== RESULT (mean Invoke, ms) ===
+  orig_pre   401.677, 401.677
+  orig_post  412.501, 412.500
+  pre_flash  401.676
+  post_flash 412.500
+  sn_flash   391.103
+  pre_iram   375.261
+  post_iram  375.272
+  sn_iram    356.459
+  layout gap, kernels in flash : post - pre = +10.824 ms
+  layout gap, kernels in IRAM  : post - pre = +0.011 ms
+  skip-nudge saving, flash     : 5.19 %
+  skip-nudge saving, IRAM      : 5.01 %
+Outputs: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\chapter_evidence\editor_experiments_2026-11-01
+DONE

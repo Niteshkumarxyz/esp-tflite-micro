@@ -1,0 +1,13 @@
+﻿Runtime: R2A ESP-NN ANSI C
+Capture date: 2026-10-24
+Firmware SHA256: 4017A79C30E47A4FC15584617ACC5A86A7CF9511CB8D6F2500A22AE4B9B10143
+
+Image 10:
+INVOKE_US=528378
+RAW_OUTPUT_INT8=113,-113
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=542
+
+Image 11:
+INVOKE_US=528315
+RAW_OUTPUT_INT8=-57,57
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=542

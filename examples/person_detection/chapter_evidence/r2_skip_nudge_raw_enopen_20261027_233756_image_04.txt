@@ -1,0 +1,29 @@
+RUN_ID=20261027_233756
+IMAGE=4
+FIRMWARE_BIN_SHA256=f8957c85437ca1af1293447058caabaedab3c0280ea580ae8397b9cac33f2994
+RESET_SYNC_ERROR=Timeout waiting for b'rst:'; start=2855, buffered=3664 bytes
+F84 (83 KiB): IRAM
+I (401) spi_flash: detected chip: generic
+I (404) spi_flash: flash io: qio
+I (408) main_task: Started on CPU0
+I (408) main_task: Calling app_main()
+ARENA_CONFIGURED_BYTES=163840
+ARENA_USED_BYTES=82300
+INPUT_TYPE=INT8
+INPUT_DIMS=1,96,96,1
+INPUT_SCALE=0.0078431377
+INPUT_ZERO_POINT=-1
+I (428) [esp_cli]: Registering command: mem-dump
+I (438) [esp_cli]: Registering command: task-dump
+I (438) [esp_cli]: Registering command: cpu-dump
+[5n
+Type 'help' to get the list of commands.
+Use UP/DOWN arrows to navigate through command history.
+Press TAB when typing command name to auto-complete.
+
+Your terminal application does not support escape sequences.
+
+Line editing and history features are disabled.
+
+On Windows, try using Windows Terminal or Putty instead.
+esp> 

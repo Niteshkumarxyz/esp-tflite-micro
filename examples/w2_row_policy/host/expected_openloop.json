@@ -1,0 +1,16 @@
+{
+ "per_tensor": {
+  "double_rounding_family (TFLM reference, CMSIS-NN, Arm builds)": "2cb39782655ef333b720eb4519de07123a49610b7c2305d896d7c88d4e1e56e4",
+  "single_rounding_family (LiteRT REF, TFLM/CMSIS-NN single rounding)": "314a0b14e4d5f3a47e1c44cba810c02206f744790ca16ef2f3289ccb4256b862",
+  "LiteRT_OPT": "4d76d8693f2e80aed158fd46f949797b31082928a1e6e8f3ed10dbab95c0c7b4",
+  "LiteRT_XNNPACK": "585e53d24c1d620e351f9a4e34940a37db9dc4f2f336627f69d8e37777e11344",
+  "openloop_obs_sha256": "1299c4ecd199e46e9a20a53fbe9ea149624d64e909c69dd3075ef505be164923"
+ },
+ "per_channel": {
+  "double_rounding_family (TFLM reference, CMSIS-NN, Arm builds)": "ac541bf58440b02d8a90fce6d49e80d4bf65422258ab8a371653ac26ca56c87e",
+  "single_rounding_family (LiteRT REF, TFLM/CMSIS-NN single rounding)": "e49f117b171314f52f2a77df3d921a0687e40a0dc9e5ff2a8e6517ac24af6eb0",
+  "LiteRT_OPT": "4309176e691eaeb04dac206e49bc98595718948212261be66f74b35205ccbb8e",
+  "LiteRT_XNNPACK": "083808329c23b5aa691a47347d4b1bd2f37b0c1f2894d8a98286c9a11c83728f",
+  "openloop_obs_sha256": "1299c4ecd199e46e9a20a53fbe9ea149624d64e909c69dd3075ef505be164923"
+ }
+}

@@ -1,0 +1,8 @@
+Cycle-count build diagnostic — 2026-10-21
+Build directory: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\build_cycle_optimized_20261021
+Failed build log: idf_py_stdout_output_26428
+Root cause: esp_cli.c BENCH_SAMPLE used %u with uint32_t, triggering -Werror=format.
+Correction: include inttypes.h and use PRIu32 for the cycle-count field.
+Original failed-build logs preserved.
+Corrected source snapshot: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\evidence\cycle_count\instrumented_source_fix1_20261021
+Firmware build has not yet been rerun. No firmware flashed.

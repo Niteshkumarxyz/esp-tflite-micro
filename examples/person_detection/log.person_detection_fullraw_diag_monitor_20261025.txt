@@ -1,0 +1,24 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261025204551
+Username: NITESH\nk947
+RunAs User: NITESH\nk947
+Configuration Name: 
+Machine: NITESH (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31020
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\log.person_detection_fullraw_diag_monitor_20261025.txt
+
+**********************
+Windows PowerShell transcript end
+End time: 20261025204928
+**********************

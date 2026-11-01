@@ -1,0 +1,4 @@
+|acc| < 2^26  33333334 cases, 0 differ, of which 0 at the INT32_MAX overflow
+|acc| < 2^29  33333333 cases, 0 differ, of which 0 at the INT32_MAX overflow
+any int32     33333333 cases, 206842 differ, of which 206842 at the INT32_MAX overflow
+exact multiply ties, |acc| < 2^26, all 32 shifts: 166400000 cases, 0 differ

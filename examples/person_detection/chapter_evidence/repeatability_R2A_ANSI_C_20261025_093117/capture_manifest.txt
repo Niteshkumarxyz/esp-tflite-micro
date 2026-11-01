@@ -1,0 +1,12 @@
+runtime=R2A_ANSI_C
+capture_started_utc=2026-10-25T04:01:17.844051+00:00
+capture_completed_utc=2026-10-25T04:01:32.222709+00:00
+serial_port=COM5
+baud=115200
+runs_per_image=10
+images=10,11
+firmware_bin=C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\chapter_evidence\r2a_ansi_c_images10_11_2026-10-24\person_detection_r2a_ansi_c.bin
+firmware_sha256=4017A79C30E47A4FC15584617ACC5A86A7CF9511CB8D6F2500A22AE4B9B10143
+raw_log_sha256=8AE465BD762D0C82E49CFFA473F83EE8C0EB9860DCABCCC2D4FE8E6B0D99175F
+trial_results_sha256=F6228FBFC0311D18B5DA71665DB67DEF4BE554AE1F4AA5489DE6FCF73BE45177
+runtime_summary_sha256=E251D0B9F31BCE87E84B999AE45D95F35CEC7ABFAB1204100D244AB025C419CF

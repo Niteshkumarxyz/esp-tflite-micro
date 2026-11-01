@@ -1,0 +1,2 @@
+﻿image,result,trace_records,raw_records,bytes,sha256,firmware_sha256,reset_confirmed,file,raw_present
+8,"IMAGE_RESULT,image=8,invoke_ok=1,person_raw_int8=114,no_person_raw_int8=-114,latency_ms=58468",31,3625,678654,35b972ec67abb73851260a607d988e953f59b391e6ef518b924cefb7a7442c67,F70EA1D4FF93289BB32BB3C89B20A70C3C232264B1B9B3793BEC43EB94D9F4BE,True,optimized_r2_tensor_trace_image_8_resetverified_retry_2026-10-27.txt,True

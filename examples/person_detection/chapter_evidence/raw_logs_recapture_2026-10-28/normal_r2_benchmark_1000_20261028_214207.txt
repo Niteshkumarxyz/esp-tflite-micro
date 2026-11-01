@@ -1,0 +1,44 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261028214208
+Username: NITESH\nk947
+RunAs User: NITESH\nk947
+Configuration Name: 
+Machine: NITESH (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14328
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\chapter_evidence\raw_logs_recapture_2026-10-28\normal_r2_benchmark_1000_20261028_214207.txt
+Raw capture file: .\chapter_evidence\raw_logs_recapture_2026-10-28\normal_r2_benchmark_1000_20261028_214207.txt
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection> idf.py -p COM5 monitor
+
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection> Stop-Transcript
+
+$log = ".\chapter_evidence\raw_logs_recapture_2026-10-28\normal_r2_benchmark_1000_20261028_214207.txt"
+
+if (Test-Path $log) {
+    Write-Host "`n=== Capture verification ===" -ForegroundColor Cyan
+    Get-Item $log | Select-Object FullName, Length, LastWriteTime
+
+    $content = Get-Content $log
+    [PSCustomObject]@{
+        BenchStart = @($content | Select-String '^BENCH_START,').Count
+        Samples = @($content | Select-String '^BENCH_SAMPLE,').Count
+        BenchSummary = @($content | Select-String '^BENCH_SUMMARY,').Count
+        ChecksumWarning = @($content | Select-String 'Checksum mismatch').Count
+    } | Format-List
+} else {
+    Write-Host "Transcript file not found at expected path." -ForegroundColor Red
+}
+**********************
+Windows PowerShell transcript end
+End time: 20261028215245
+**********************

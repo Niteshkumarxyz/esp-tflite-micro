@@ -1,0 +1,63 @@
+{
+  "run_id": "20261029_194250",
+  "boots_per_build": 5,
+  "port": "COM5",
+  "builds": {
+    "r1": {
+      "folder": "build_rq4nt_r1",
+      "sha256": {
+        "bin": "1b3de7cb4506c40bf5749d12c7faac7a0f197a6b21d9e4eaff96c87029fc65fc",
+        "elf": "595b3f3de3f91a0ba8e263abdf76d3b35308b37b34976fab29be366b6b842c3f",
+        "sdkconfig": "951ca487cb3e9c673b3d3c5dd2b191a9a6e966ac74dc98ee18f4dfa445b4ee3d",
+        "bin_appended_digest": "4a77964c8f4faf34bbbeb9400cf22e8f76b7622ddfc5a72a5977b3ad295dde10",
+        "bin_digest_valid": true
+      },
+      "expected_verdict": "PASS"
+    },
+    "r2a": {
+      "folder": "build_rq4nt_r2a",
+      "sha256": {
+        "bin": "c9117ba1229ae34aae146a71998bf950b5ab811fcc8778d759530c55390be843",
+        "elf": "1215e6473a8f4480228ddb9da566e5d69ec39f71750f9e3afba9c03fbba80c3d",
+        "sdkconfig": "0536d2dc49e0622f385913d8f398f80b8433af5058c8363b5116e451c2121c62",
+        "bin_appended_digest": "0ed0b1be67988cfd279102a76fec9b90d07a612856c7b5949b80f1ceb6367ad4",
+        "bin_digest_valid": true
+      },
+      "expected_verdict": "PASS"
+    },
+    "r2": {
+      "folder": "build_rq4nt_r2",
+      "sha256": {
+        "bin": "5061c2b94f03dca3ff4a7e143b6c530c1a117620cf3c2af0e8ca6c229fe79115",
+        "elf": "2115121a1ebf325f042d62c59a1f337762e888cf2a9b28548f745a2db118b12f",
+        "sdkconfig": "c8f47fe0db5d690e40f27eaddeecdfe6c424bc7aaf974cb8bf3d804e4c0235c8",
+        "bin_appended_digest": "2bdc0c9cc20485b22b43fe5bb932eb30b0520c5d457cacc5d135a1197c1e6959",
+        "bin_digest_valid": true
+      },
+      "expected_verdict": "PASS"
+    },
+    "r2sn": {
+      "folder": "build_rq4nt_r2sn",
+      "sha256": {
+        "bin": "8f7e05da8fdf2ae6dc3358780ca8890a6f9399cf8da13ec8b6090c0e3e0e6ac4",
+        "elf": "cafb59fc2955a39b27eb9ec1ad8b626cf92731acb0c445603a6974b8a4acc581",
+        "sdkconfig": "4a21a98015da656e445d1493de94757e0935c660e15c55e6fb47ce37c6fc4a3e",
+        "bin_appended_digest": "dacf5288b3d7861d35fd797eb4671cca0ea8c873dc14fae27b01b6c513e8cdbb",
+        "bin_digest_valid": true
+      },
+      "expected_verdict": "PASS"
+    },
+    "r1sr": {
+      "folder": "build_rq4nt_r1sr",
+      "sha256": {
+        "bin": "2e6ee29bfa1dc8867e60430d662e62a47953843c382052e7ac5427d0f2465626",
+        "elf": "4b520e3630a30826a59762e12717cd4816de44b3f500200a2655807af4bac728",
+        "sdkconfig": "951ca487cb3e9c673b3d3c5dd2b191a9a6e966ac74dc98ee18f4dfa445b4ee3d",
+        "bin_appended_digest": "b6d5cdc8694c4efb6f04ca112236a54ea86b27a1de7922900b515f936afe72f1",
+        "bin_digest_valid": true
+      },
+      "expected_verdict": "FAIL"
+    }
+  },
+  "all_as_expected": false
+}

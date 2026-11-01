@@ -1,0 +1,16 @@
+RQ4 run 20261029_190542; IDF_PATH=C:\esp\v6.0.3\esp-idf; keep-awake requested: True
+[r1] building ... (-B build_rq4_r1 -D SDKCONFIG=build_rq4_r1/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r1 build)
+[r1] build return code 0 in 543 s
+[r1] configuration OK; BIN a7a639a0d215f80c..., ELF 0349493b095031f3...
+[r2a] building ... (-B build_rq4_r2a -D SDKCONFIG=build_rq4_r2a/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r2a build)
+[r2a] build return code 0 in 550 s
+[r2a] configuration OK; BIN 21af8a74f9aaa64b..., ELF be5538226ec2e112...
+[r2] building ... (-B build_rq4_r2 -D SDKCONFIG=build_rq4_r2/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r2 build)
+[r2] build return code 0 in 372 s
+[r2] configuration OK; BIN 71dcb947398b1b2d..., ELF 4345bd6ac58a7853...
+[r2sn] building ... (-B build_rq4_r2sn -D SDKCONFIG=build_rq4_r2sn/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r2sn build)
+[r2sn] build return code 0 in 331 s
+[r2sn] configuration OK; BIN 081e8075e8b12a67..., ELF 685f7d28a0d6ef35...
+[r1sr] building ... (-B build_rq4_r1sr -D SDKCONFIG=build_rq4_r1sr/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r1 -D RQ4_SINGLE_ROUNDING=1 build)
+[r1sr] build return code 2 in 281 s
+[r1sr] BUILD FAILED - see build_log_r1sr_20261029_190542.txt. Stopping before any flashing.

@@ -1,0 +1,318 @@
+
+[2026-10-25T04:16:58.823591+00:00] >>> detect_image 10
+detect_image 10
+
+INVOKE_US=412519
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:16:59.263816+00:00] >>> detect_image 10
+���}���u� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412499
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:16:59.709885+00:00] >>> detect_image 10
+�����required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412506
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:00.154884+00:00] >>> detect_image 10
+�ZW'�����required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412499
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:00.600813+00:00] >>> detect_image 10
+����required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412508
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:01.045137+00:00] >>> detect_image 10
+Y.}���u� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412499
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:01.491477+00:00] >>> detect_image 10
+ [esp_cli]:e required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412503
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:01.938367+00:00] >>> detect_image 10
+095) [esp_cli]: Time required for t inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412500
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:02.380921+00:00] >>> detect_image 10
+[esp_cli]: Time required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412502
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:02.826975+00:00] >>> detect_image 10
+� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 10
+
+INVOKE_US=412498
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=113,-113
+person score:94%, no person score 6%
+IMAGE_RESULT,image=10,invoke_ok=1,person_raw_int8=113,no_person_raw_int8=-113,latency_ms=426
+
+[2026-10-25T04:17:03.272052+00:00] >>> detect_image 11
+li]: Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412461
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:03.717967+00:00] >>> detect_image 11
+) [esp_clequired for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412449
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:04.162281+00:00] >>> detect_image 11
+u� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412461
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:04.607492+00:00] >>> detect_image 11
+65) [esp_cliTime required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412451
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:05.052145+00:00] >>> detect_image 11
+ZW'�����required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412461
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:05.496780+00:00] >>> detect_image 11
+p_cli]: Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412449
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:05.941853+00:00] >>> detect_image 11
+�}���u� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412460
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:06.387282+00:00] >>> detect_image 11
+li]: Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412451
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:06.832437+00:00] >>> detect_image 11
+10995) [esp�u� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412459
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426
+
+[2026-10-25T04:17:07.276936+00:00] >>> detect_image 11
+���}���u� Time required for the inference is 426 ms
+esp> 
+esp> detect_image 11
+
+INVOKE_US=412451
+FC time = 0
+DC time = 95
+conv time = 316
+Pooling time = 0
+add time = 0
+mul time = 0
+RAW_OUTPUT_INT8=-57,57
+person score:28%, no person score 72%
+IMAGE_RESULT,image=11,invoke_ok=1,person_raw_int8=-57,no_person_raw_int8=57,latency_ms=426

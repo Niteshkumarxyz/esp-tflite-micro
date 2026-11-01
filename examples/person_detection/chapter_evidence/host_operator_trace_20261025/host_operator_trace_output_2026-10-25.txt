@@ -1,0 +1,18 @@
+input check 10 person True
+input check 11 no_person True
+REF: tensors identical 372/372; differing elements 0 of 2781768; max LSB 0
+OPT: tensors identical 372/372; differing elements 0 of 2781768; max LSB 0
+XNN: tensors identical 9/372; differing elements 417024 of 2781768; max LSB 15
+  image 0: first divergent op 0 (tensor 34), ops differing 28, max LSB 8, output-op diff 0
+  image 1: first divergent op 0 (tensor 34), ops differing 31, max LSB 10, output-op diff 2
+  image 2: first divergent op 0 (tensor 34), ops differing 30, max LSB 7, output-op diff 0
+  image 3: first divergent op 0 (tensor 34), ops differing 31, max LSB 15, output-op diff 2
+  image 4: first divergent op 0 (tensor 34), ops differing 28, max LSB 9, output-op diff 0
+  image 5: first divergent op 0 (tensor 34), ops differing 31, max LSB 9, output-op diff 2
+  image 6: first divergent op 0 (tensor 34), ops differing 31, max LSB 9, output-op diff 2
+  image 7: first divergent op 0 (tensor 34), ops differing 31, max LSB 8, output-op diff 2
+  image 8: first divergent op 0 (tensor 34), ops differing 30, max LSB 10, output-op diff 0
+  image 9: first divergent op 0 (tensor 34), ops differing 31, max LSB 8, output-op diff 2
+  image 10: first divergent op 0 (tensor 34), ops differing 30, max LSB 8, output-op diff 0
+  image 11: first divergent op 0 (tensor 34), ops differing 31, max LSB 7, output-op diff 2
+model sha 77cac99d46416295fc3ec9cf752dec8e0c8aafd9421475da6c86439aee22e1c4

@@ -1,0 +1,3 @@
+"Runtime","SourceFile","Samples","Mean_us","Median_us","Min_us","Max_us","ESP_NN_Speedup_Over_Reference","Mean_Latency_Reduction_Percent"
+"ESP-NN","w1_esp_nn_retest_validation_2026-10-20.csv","10","403682.6","403674","403492","403892","10.263","90.26"
+"Reference kernels","w1_reference_kernels_validation_2026-10-20.csv","10","4142992.8","4142996.5","4142924","4143068","10.263","90.26"

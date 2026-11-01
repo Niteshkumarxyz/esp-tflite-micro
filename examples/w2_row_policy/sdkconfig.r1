@@ -1,0 +1,2 @@
+# R1: TFLM reference kernels (no ESP-NN code linked)
+# CONFIG_ESP_TFLITE_MICRO_USE_ESP_NN is not set

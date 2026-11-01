@@ -1,0 +1,37 @@
+ESP32 Person Detection — 1000-run benchmark evidence
+Date in filename: 2026-10-21
+Source: user-provided ESP-IDF monitor transcript; benchmark was run interactively on the board.
+
+Run configuration
+- Command: benchmark 1000
+- Warm-up runs: 10
+- Measured runs: 1000
+- Images cycled: 10 (image indices 0–9)
+- Timing scope: interpreter_Invoke_only (per BENCH_START line)
+- Successful measured invocations: 1000
+- Failures from sample records: 0
+
+Firmware-reported BENCH_SUMMARY
+- runs: 1000
+- failures: 0
+- mean_us: 401644
+- median_us: 401644
+- p95_nearest_rank_us: 401726
+- min_us: 401554
+- max_us: 401729
+
+Independent recomputation from the 1000 BENCH_SAMPLE rows
+- Mean: 401644.652 microseconds (401.644652 ms)
+- Median: 401644.5 microseconds (401.6445 ms)
+- P95 nearest-rank: 401726 microseconds (401.726 ms)
+- Minimum: 401554 microseconds
+- Maximum: 401729 microseconds
+- Failures: 0
+- Raw-output/status tuples stable within each repeated image index: True
+
+Interpretation / limitations
+- These timings measure interpreter->Invoke() only; they are not camera-to-result end-to-end latency.
+- This benchmark cycles the same 10 image indices, not 1000 unique images.
+- Sample-level outputs and InvokeOK status are retained in the companion CSV.
+- The firmware summary reports integer microseconds; independent floating-point mean/median are included above to make rounding/truncation explicit.
+- This is the transcript supplied in chat, not an independently captured live serial recording. Preserve the original board output if exact acquisition provenance is required.

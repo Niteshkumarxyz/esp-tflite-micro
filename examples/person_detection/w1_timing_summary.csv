@@ -1,0 +1,6 @@
+﻿Metric,Value,Unit,Sample_Count
+Mean,403562.9,microseconds,10
+Median,403555.5,microseconds,10
+Minimum,403367,microseconds,10
+Maximum,403768,microseconds,10
+Range,401,microseconds,10

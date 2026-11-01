@@ -1,0 +1,21 @@
+Cycle-count benchmark recovery note
+Date: 2026-10-22
+Source: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\evidence\cycle_count\cycle_benchmark_100_raw_20261022.txt
+Source SHA-256: 88E71C2B3AF7F44F4D4548B75D5D31C018B8860372CA2476CA9E84A57F2FAA16
+
+100 sample records were parsed and validated in run order.
+Image indices cycle from 0 through 9.
+Timing region: interpreter_Invoke_only.
+Warm-up runs reported by firmware: 10.
+Measured samples: 100
+Samples with ok != 1: 0
+
+The first capture script stopped upon seeing the beginning of
+BENCH_SUMMARY rather than waiting for the complete line.
+The raw log was preserved unchanged. Statistics in the recovered
+summary CSV are independently calculated from the captured samples.
+The full firmware summary is therefore marked incomplete and is not
+treated as verified evidence.
+
+This is 100 repeated measurements cycling through 10 demo images,
+not 100 unique images.

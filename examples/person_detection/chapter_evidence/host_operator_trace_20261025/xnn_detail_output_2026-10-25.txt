@@ -1,0 +1,48 @@
+input check 10 person True
+input check 11 no_person True
+op,frac_diff_mean,max_lsb,images_identical
+0 0.0019 1 0
+1 0.005 3 0
+2 0.013 3 0
+3 0.0274 3 0
+4 0.0638 5 0
+5 0.1138 8 0
+6 0.1886 8 0
+7 0.2155 5 0
+8 0.2748 5 0
+9 0.2721 6 0
+10 0.3067 6 0
+11 0.3366 5 0
+12 0.3275 5 0
+13 0.2724 8 0
+14 0.3265 5 0
+15 0.2812 8 0
+16 0.3246 6 0
+17 0.2519 9 0
+18 0.3333 7 0
+19 0.2474 10 0
+20 0.3579 7 0
+21 0.2723 12 0
+22 0.3603 10 0
+23 0.2638 13 0
+24 0.3366 12 0
+25 0.2559 15 0
+26 0.1485 8 0
+27 0.1292 2 0
+28 0.7083 8 2
+29 0.7083 8 2
+30 0.5833 10 5
+op0 signed diff histogram (host XNN minus device): [(-1, 410), (0, 220774)]
+output tensor 87 [no_person, person] device vs XNN:
+0 [-115, 115] [-115, 115] same label LSB 0
+1 [39, -39] [31, -31] same label LSB 8
+2 [-115, 115] [-115, 115] same label LSB 0
+3 [-67, 67] [-57, 57] same label LSB 10
+4 [-111, 111] [-111, 111] same label LSB 0
+5 [100, -100] [101, -101] same label LSB 1
+6 [-97, 97] [-98, 98] same label LSB 1
+7 [98, -98] [97, -97] same label LSB 1
+8 [-114, 114] [-114, 114] same label LSB 0
+9 [-83, 83] [-81, 81] same label LSB 2
+10 [-113, 113] [-113, 113] same label LSB 0
+11 [57, -57] [60, -60] same label LSB 3

@@ -1,0 +1,440 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0040,len:6340
+load:0x40078000,len:15844
+load:0x40080400,len:3920
+entry 0x40080644
+I (27) boot: ESP-IDF v6.0.3 2nd stage bootloader
+I (27) boot: compile time Oct 29 2026 21:23:25
+I (28) boot: Multicore bootloader
+I (29) boot: chip revision: v3.1
+I (32) boot.esp32: SPI Speed      : 80MHz
+I (35) boot.esp32: SPI Mode       : DIO
+I (39) boot.esp32: SPI Flash Size : 4MB
+I (42) boot: Enabling RNG early entropy source...
+I (47) boot: Partition Table:
+I (49) boot: ## Label            Usage          Type ST Offset   Length
+I (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (69) boot:  2 factory          factory app      00 00 00010000 00177000
+I (75) boot: End of partition table
+I (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=71540h (464192) map
+I (225) esp_image: segment 1: paddr=00081568 vaddr=3ffb0000 size=02918h ( 10520) load
+I (229) esp_image: segment 2: paddr=00083e88 vaddr=40080000 size=0a2bch ( 41660) load
+I (244) esp_image: segment 3: paddr=0008e14c vaddr=50000000 size=00028h (    40) load
+I (244) esp_image: segment 4: paddr=0008e17c vaddr=00000000 size=01e9ch (  7836) 
+I (250) esp_image: segment 5: paddr=00090020 vaddr=400d0020 size=1d8e8h (121064) map
+I (297) boot: Loaded app from partition at offset 0x10000
+I (297) boot: Disabling RNG early entropy source...
+I (307) cpu_start: Multicore app
+I (315) cpu_start: GPIO 3 and 1 are used as console UART I/O pins
+I (315) cpu_start: Pro cpu start user code
+I (315) cpu_start: cpu freq: 240000000 Hz
+I (317) app_init: Application information:
+I (321) app_init: Project name:     rq4_boot_kat
+I (325) app_init: App version:      v1.4.1-5-g15dd18a-dirty
+I (331) app_init: Compile time:     Oct 29 2026 21:20:36
+I (336) app_init: ELF file SHA256:  24bb0010cacd4e42...
+I (341) app_init: ESP-IDF:          v6.0.3
+I (344) efuse_init: Min chip rev:     v0.0
+I (348) efuse_init: Max chip rev:     v3.99 
+I (352) efuse_init: Chip rev:         v3.1
+I (356) heap_init: Initializing. RAM available for dynamic allocation:
+I (362) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (367) heap_init: At 3FFB3898 len 0002C768 (177 KiB): DRAM
+I (373) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (378) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (384) heap_init: At 4008A2BC len 00015D44 (87 KiB): IRAM
+I (390) spi_flash: detected chip: generic
+I (393) spi_flash: flash io: dio
+I (396) main_task: Started on CPU0
+I (396) main_task: Calling app_main()
+
+RQ4_BOOT,reset_reason=1,uptime_us=13379
+RQ4_BUILD,project=rq4_boot_kat,version=v1.4.1-5-g15dd18a-dirty,idf=v6.0.3,esp_nn=0,nn_optimized=1,nn_ansi_c=0,skip_nudge=0,single_rounding=1,cpu_mhz=240
+RQ4_IDENTITY,elf_sha256=24bb0010cacd4e42a49ff6a190eac6c303a2fb2429db6b82fe725b7236b6550e,app_image_digest=e07fc0013d2bf3c63f3ff12c37048f19f7eac04a67de19d8a32af0eacc3aef96,partition=factory,identity_us=81102
+RQ4_SETUP,arena_configured=163840,arena_used=82304,largest_block_before=172032,setup_us=23745
+RQ4_IMAGE,image=0,invoke_ok=1,ops_run=31,person=115,no_person=-115,expected_person=115,expected_no_person=-115,output_match=1,ops_match=3,first_mismatch_op=0,invoke_us=4147358,hash_us=5111,image_us=4148367,cycles=995365921
+RQ4_OPMISMATCH,image=0,op=0,n=18432,fnv=7227cfed,expected=4e2002df
+RQ4_OPMISMATCH,image=0,op=1,n=18432,fnv=d72af497,expected=cbad6040
+RQ4_OPMISMATCH,image=0,op=2,n=36864,fnv=e4be2468,expected=65eb432c
+RQ4_OPMISMATCH,image=0,op=3,n=9216,fnv=632f4bba,expected=0642d7c8
+RQ4_OPMISMATCH,image=0,op=4,n=18432,fnv=a429d38e,expected=69a3c2ef
+RQ4_OPMISMATCH,image=0,op=5,n=18432,fnv=eaaeca3b,expected=720abdf6
+RQ4_OPMISMATCH,image=0,op=6,n=18432,fnv=7da23b04,expected=94346e36
+RQ4_OPMISMATCH,image=0,op=7,n=4608,fnv=b0b160da,expected=ed840f67
+RQ4_OPMISMATCH,image=0,op=8,n=9216,fnv=d26a81de,expected=cdf407c8
+RQ4_OPMISMATCH,image=0,op=9,n=9216,fnv=549c65d0,expected=0a945fc2
+RQ4_OPMISMATCH,image=0,op=10,n=9216,fnv=542df0f3,expected=b661cccc
+RQ4_OPMISMATCH,image=0,op=11,n=2304,fnv=d9cb7240,expected=2692ac49
+RQ4_OPMISMATCH,image=0,op=12,n=4608,fnv=5677ff33,expected=d9acb1c4
+RQ4_OPMISMATCH,image=0,op=13,n=4608,fnv=d0a62b53,expected=cd093450
+RQ4_OPMISMATCH,image=0,op=14,n=4608,fnv=3f65415a,expected=94fcbb8f
+RQ4_OPMISMATCH,image=0,op=15,n=4608,fnv=429c450e,expected=0bb32d80
+RQ4_OPMISMATCH,image=0,op=16,n=4608,fnv=787eb249,expected=fdb07b62
+RQ4_OPMISMATCH,image=0,op=17,n=4608,fnv=553fd4e9,expected=dda5fa66
+RQ4_OPMISMATCH,image=0,op=18,n=4608,fnv=bd96488b,expected=a024795a
+RQ4_OPMISMATCH,image=0,op=19,n=4608,fnv=54f62257,expected=1f0f2731
+RQ4_OPMISMATCH,image=0,op=20,n=4608,fnv=3795fded,expected=03c33a15
+RQ4_OPMISMATCH,image=0,op=21,n=4608,fnv=86e3ccbd,expected=cc407527
+RQ4_OPMISMATCH,image=0,op=22,n=4608,fnv=3b36771d,expected=e3b63bcc
+RQ4_OPMISMATCH,image=0,op=23,n=1152,fnv=7688971a,expected=e91fee16
+RQ4_OPMISMATCH,image=0,op=24,n=2304,fnv=ea25249e,expected=3abc1515
+RQ4_OPMISMATCH,image=0,op=25,n=2304,fnv=b7a6e3b7,expected=a87bd2c5
+RQ4_OPMISMATCH,image=0,op=26,n=2304,fnv=df6ae55e,expected=4ee51fb0
+RQ4_OPMISMATCH,image=0,op=27,n=256,fnv=1b40e5f3,expected=3823da60
+I (4846) main_task: Returned from app_main()
+RQ4_IMAGE,image=1,invoke_ok=1,ops_run=31,person=-31,no_person=31,expected_person=-39,expected_no_person=39,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147351,hash_us=5094,image_us=4148358,cycles=995364247
+RQ4_OPMISMATCH,image=1,op=0,n=18432,fnv=f5bfe5ae,expected=df59dcc6
+RQ4_OPMISMATCH,image=1,op=1,n=18432,fnv=6cd8b8b0,expected=f94b1666
+RQ4_OPMISMATCH,image=1,op=2,n=36864,fnv=37a2c19f,expected=a194cf02
+RQ4_OPMISMATCH,image=1,op=3,n=9216,fnv=4e4ee09b,expected=41ada29c
+RQ4_OPMISMATCH,image=1,op=4,n=18432,fnv=75fdf141,expected=268ceca6
+RQ4_OPMISMATCH,image=1,op=5,n=18432,fnv=63afeee4,expected=55f97283
+RQ4_OPMISMATCH,image=1,op=6,n=18432,fnv=be79adde,expected=e2d1dab0
+RQ4_OPMISMATCH,image=1,op=7,n=4608,fnv=d477655e,expected=9fdda5d1
+RQ4_OPMISMATCH,image=1,op=8,n=9216,fnv=77cc38bc,expected=634d5100
+RQ4_OPMISMATCH,image=1,op=9,n=9216,fnv=03c788b8,expected=f12ef7d4
+RQ4_OPMISMATCH,image=1,op=10,n=9216,fnv=ee905a97,expected=a439abb0
+RQ4_OPMISMATCH,image=1,op=11,n=2304,fnv=8efd0ef1,expected=a41c2c8d
+RQ4_OPMISMATCH,image=1,op=12,n=4608,fnv=1501abf7,expected=2bc88c38
+RQ4_OPMISMATCH,image=1,op=13,n=4608,fnv=8c6150b1,expected=23124b4c
+RQ4_OPMISMATCH,image=1,op=14,n=4608,fnv=e3223bdd,expected=21b95e7f
+RQ4_OPMISMATCH,image=1,op=15,n=4608,fnv=f4ee7595,expected=ff1098a2
+RQ4_OPMISMATCH,image=1,op=16,n=4608,fnv=2e03df21,expected=12391f5f
+RQ4_OPMISMATCH,image=1,op=17,n=4608,fnv=915e2d15,expected=b41af1fb
+RQ4_OPMISMATCH,image=1,op=18,n=4608,fnv=70e545f6,expected=592c1681
+RQ4_OPMISMATCH,image=1,op=19,n=4608,fnv=ddc88076,expected=d3889da8
+RQ4_OPMISMATCH,image=1,op=20,n=4608,fnv=9022bd1c,expected=0100c325
+RQ4_OPMISMATCH,image=1,op=21,n=4608,fnv=4b0592e1,expected=9b13a5f9
+RQ4_OPMISMATCH,image=1,op=22,n=4608,fnv=5b65e476,expected=b687c5e2
+RQ4_OPMISMATCH,image=1,op=23,n=1152,fnv=aea3ebfa,expected=25c77850
+RQ4_OPMISMATCH,image=1,op=24,n=2304,fnv=750837b9,expected=73eeda0f
+RQ4_OPMISMATCH,image=1,op=25,n=2304,fnv=1953cd02,expected=e49e3088
+RQ4_OPMISMATCH,image=1,op=26,n=2304,fnv=5e51c8f9,expected=552f8c6a
+RQ4_OPMISMATCH,image=1,op=27,n=256,fnv=c6456e88,expected=d8dd6d25
+RQ4_OPMISMATCH,image=1,op=28,n=2,fnv=c595c83d,expected=dab02cc9
+RQ4_OPMISMATCH,image=1,op=29,n=2,fnv=c595c83d,expected=dab02cc9
+RQ4_OPMISMATCH,image=1,op=30,n=2,fnv=d0ab9fdd,expected=b8bd6ecd
+RQ4_IMAGE,image=2,invoke_ok=1,ops_run=31,person=115,no_person=-115,expected_person=115,expected_no_person=-115,output_match=1,ops_match=1,first_mismatch_op=0,invoke_us=4147386,hash_us=5110,image_us=4148393,cycles=995372611
+RQ4_OPMISMATCH,image=2,op=0,n=18432,fnv=9b4e7f19,expected=ce6dfde0
+RQ4_OPMISMATCH,image=2,op=1,n=18432,fnv=1d75ffb7,expected=44f94c08
+RQ4_OPMISMATCH,image=2,op=2,n=36864,fnv=5f050e7e,expected=e90a42c8
+RQ4_OPMISMATCH,image=2,op=3,n=9216,fnv=33768cd0,expected=16cc149c
+RQ4_OPMISMATCH,image=2,op=4,n=18432,fnv=94456940,expected=62ed9eb5
+RQ4_OPMISMATCH,image=2,op=5,n=18432,fnv=7d763b36,expected=31d363c8
+RQ4_OPMISMATCH,image=2,op=6,n=18432,fnv=4c6513be,expected=61bc0b6f
+RQ4_OPMISMATCH,image=2,op=7,n=4608,fnv=a6178d29,expected=5207cb9b
+RQ4_OPMISMATCH,image=2,op=8,n=9216,fnv=cb74d776,expected=f79553a3
+RQ4_OPMISMATCH,image=2,op=9,n=9216,fnv=fc07f32c,expected=68beeee4
+RQ4_OPMISMATCH,image=2,op=10,n=9216,fnv=e9c661ef,expected=c2e640bc
+RQ4_OPMISMATCH,image=2,op=11,n=2304,fnv=872a2025,expected=44625c87
+RQ4_OPMISMATCH,image=2,op=12,n=4608,fnv=24eba452,expected=0f96967f
+RQ4_OPMISMATCH,image=2,op=13,n=4608,fnv=42fd5e37,expected=5cd06aed
+RQ4_OPMISMATCH,image=2,op=14,n=4608,fnv=0d85ff22,expected=06b7b296
+RQ4_OPMISMATCH,image=2,op=15,n=4608,fnv=05700429,expected=ce8496c8
+RQ4_OPMISMATCH,image=2,op=16,n=4608,fnv=0d237dbe,expected=41fd62b5
+RQ4_OPMISMATCH,image=2,op=17,n=4608,fnv=4bc0f927,expected=fca0fa76
+RQ4_OPMISMATCH,image=2,op=18,n=4608,fnv=3fcb3e83,expected=872a4089
+RQ4_OPMISMATCH,image=2,op=19,n=4608,fnv=0f36a519,expected=20e7bbca
+RQ4_OPMISMATCH,image=2,op=20,n=4608,fnv=9bb56abf,expected=36219593
+RQ4_OPMISMATCH,image=2,op=21,n=4608,fnv=d583163b,expected=39c3afa7
+RQ4_OPMISMATCH,image=2,op=22,n=4608,fnv=c7e48ff5,expected=6ffe0054
+RQ4_OPMISMATCH,image=2,op=23,n=1152,fnv=119b77d6,expected=3c9d6109
+RQ4_OPMISMATCH,image=2,op=24,n=2304,fnv=8f67a122,expected=56025b0e
+RQ4_OPMISMATCH,image=2,op=25,n=2304,fnv=aa753ccd,expected=6eecd516
+RQ4_OPMISMATCH,image=2,op=26,n=2304,fnv=d95bcda1,expected=dcc1bc19
+RQ4_OPMISMATCH,image=2,op=27,n=256,fnv=d6ffa25f,expected=a452b0c8
+RQ4_OPMISMATCH,image=2,op=28,n=2,fnv=554f963b,expected=5851d98b
+RQ4_OPMISMATCH,image=2,op=29,n=2,fnv=554f963b,expected=5851d98b
+RQ4_IMAGE,image=3,invoke_ok=1,ops_run=31,person=57,no_person=-57,expected_person=67,expected_no_person=-67,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147338,hash_us=5089,image_us=4148344,cycles=995361034
+RQ4_OPMISMATCH,image=3,op=0,n=18432,fnv=94210793,expected=b43c1953
+RQ4_OPMISMATCH,image=3,op=1,n=18432,fnv=c3d2389e,expected=fa071e54
+RQ4_OPMISMATCH,image=3,op=2,n=36864,fnv=78125785,expected=721a7d46
+RQ4_OPMISMATCH,image=3,op=3,n=9216,fnv=ab9aa23c,expected=ba1b6147
+RQ4_OPMISMATCH,image=3,op=4,n=18432,fnv=52f36a2c,expected=4ac54955
+RQ4_OPMISMATCH,image=3,op=5,n=18432,fnv=154ae058,expected=ac3f5272
+RQ4_OPMISMATCH,image=3,op=6,n=18432,fnv=8de29832,expected=e2c365df
+RQ4_OPMISMATCH,image=3,op=7,n=4608,fnv=87f98048,expected=9fd8f96c
+RQ4_OPMISMATCH,image=3,op=8,n=9216,fnv=bcc1bd73,expected=3abd3668
+RQ4_OPMISMATCH,image=3,op=9,n=9216,fnv=86b517e6,expected=a223af82
+RQ4_OPMISMATCH,image=3,op=10,n=9216,fnv=63bb6270,expected=108813ec
+RQ4_OPMISMATCH,image=3,op=11,n=2304,fnv=81f28c05,expected=a7d12abf
+RQ4_OPMISMATCH,image=3,op=12,n=4608,fnv=7c5f703f,expected=0d3b606a
+RQ4_OPMISMATCH,image=3,op=13,n=4608,fnv=de137126,expected=abe3cb13
+RQ4_OPMISMATCH,image=3,op=14,n=4608,fnv=6eabdf95,expected=93661b4b
+RQ4_OPMISMATCH,image=3,op=15,n=4608,fnv=bfcc7999,expected=35625c70
+RQ4_OPMISMATCH,image=3,op=16,n=4608,fnv=948f8aff,expected=88978701
+RQ4_OPMISMATCH,image=3,op=17,n=4608,fnv=ccb9a5f0,expected=f66b0af4
+RQ4_OPMISMATCH,image=3,op=18,n=4608,fnv=4f3a0c36,expected=f9fa558d
+RQ4_OPMISMATCH,image=3,op=19,n=4608,fnv=10612429,expected=598030d9
+RQ4_OPMISMATCH,image=3,op=20,n=4608,fnv=67196fc8,expected=ceacfaec
+RQ4_OPMISMATCH,image=3,op=21,n=4608,fnv=79dd2250,expected=957c3c0e
+RQ4_OPMISMATCH,image=3,op=22,n=4608,fnv=b9ea124b,expected=215ba980
+RQ4_OPMISMATCH,image=3,op=23,n=1152,fnv=e9d12e11,expected=57eea210
+RQ4_OPMISMATCH,image=3,op=24,n=2304,fnv=8b538b83,expected=0c55c3d7
+RQ4_OPMISMATCH,image=3,op=25,n=2304,fnv=8cc09ab7,expected=637e1145
+RQ4_OPMISMATCH,image=3,op=26,n=2304,fnv=3d01d28c,expected=2f9a9e33
+RQ4_OPMISMATCH,image=3,op=27,n=256,fnv=70712642,expected=8df7394c
+RQ4_OPMISMATCH,image=3,op=28,n=2,fnv=88db655e,expected=20c739ee
+RQ4_OPMISMATCH,image=3,op=29,n=2,fnv=88db655e,expected=20c739ee
+RQ4_OPMISMATCH,image=3,op=30,n=2,fnv=16934ecd,expected=65b76631
+RQ4_IMAGE,image=4,invoke_ok=1,ops_run=31,person=111,no_person=-111,expected_person=111,expected_no_person=-111,output_match=1,ops_match=3,first_mismatch_op=0,invoke_us=4147373,hash_us=5109,image_us=4148373,cycles=995369392
+RQ4_OPMISMATCH,image=4,op=0,n=18432,fnv=bf60a0ed,expected=1bad855d
+RQ4_OPMISMATCH,image=4,op=1,n=18432,fnv=3614ece3,expected=fa943bb1
+RQ4_OPMISMATCH,image=4,op=2,n=36864,fnv=9d6287a1,expected=b20c289b
+RQ4_OPMISMATCH,image=4,op=3,n=9216,fnv=96288918,expected=81e5535b
+RQ4_OPMISMATCH,image=4,op=4,n=18432,fnv=da7987bf,expected=26238137
+RQ4_OPMISMATCH,image=4,op=5,n=18432,fnv=03ec5def,expected=6980fb57
+RQ4_OPMISMATCH,image=4,op=6,n=18432,fnv=e017232a,expected=ae6ad8ef
+RQ4_OPMISMATCH,image=4,op=7,n=4608,fnv=5e7b736b,expected=dd1e565b
+RQ4_OPMISMATCH,image=4,op=8,n=9216,fnv=ae23a440,expected=82e8c583
+RQ4_OPMISMATCH,image=4,op=9,n=9216,fnv=c9241f9d,expected=f22e966c
+RQ4_OPMISMATCH,image=4,op=10,n=9216,fnv=dd9dff3f,expected=967d3598
+RQ4_OPMISMATCH,image=4,op=11,n=2304,fnv=586b3940,expected=152af479
+RQ4_OPMISMATCH,image=4,op=12,n=4608,fnv=22a94acf,expected=bdbb4903
+RQ4_OPMISMATCH,image=4,op=13,n=4608,fnv=6318f9c7,expected=2a61fc17
+RQ4_OPMISMATCH,image=4,op=14,n=4608,fnv=ef2b8279,expected=6bd2af99
+RQ4_OPMISMATCH,image=4,op=15,n=4608,fnv=81c8b549,expected=be5efd9f
+RQ4_OPMISMATCH,image=4,op=16,n=4608,fnv=0cde63dc,expected=b74eca06
+RQ4_OPMISMATCH,image=4,op=17,n=4608,fnv=fd66098d,expected=8cbdf895
+RQ4_OPMISMATCH,image=4,op=18,n=4608,fnv=d18af24f,expected=b74a05fc
+RQ4_OPMISMATCH,image=4,op=19,n=4608,fnv=c30f7010,expected=23938bb6
+RQ4_OPMISMATCH,image=4,op=20,n=4608,fnv=62d1e9f5,expected=5ed34f69
+RQ4_OPMISMATCH,image=4,op=21,n=4608,fnv=af99cbbc,expected=c31f0361
+RQ4_OPMISMATCH,image=4,op=22,n=4608,fnv=9de34b97,expected=56e97922
+RQ4_OPMISMATCH,image=4,op=23,n=1152,fnv=47409091,expected=c2293d14
+RQ4_OPMISMATCH,image=4,op=24,n=2304,fnv=90f32bb7,expected=8f15ac7a
+RQ4_OPMISMATCH,image=4,op=25,n=2304,fnv=4fcbd6b7,expected=385c5d2a
+RQ4_OPMISMATCH,image=4,op=26,n=2304,fnv=e4a880e7,expected=43e389d8
+RQ4_OPMISMATCH,image=4,op=27,n=256,fnv=7c66f230,expected=ff1bc2f6
+RQ4_IMAGE,image=5,invoke_ok=1,ops_run=31,person=-101,no_person=101,expected_person=-100,expected_no_person=100,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147345,hash_us=5091,image_us=4148350,cycles=995362879
+RQ4_OPMISMATCH,image=5,op=0,n=18432,fnv=d5d17f04,expected=0478b5b1
+RQ4_OPMISMATCH,image=5,op=1,n=18432,fnv=d7dc39ad,expected=40edc4df
+RQ4_OPMISMATCH,image=5,op=2,n=36864,fnv=d80610fd,expected=55b69ff7
+RQ4_OPMISMATCH,image=5,op=3,n=9216,fnv=92ce7c18,expected=e2af0acc
+RQ4_OPMISMATCH,image=5,op=4,n=18432,fnv=99f21df2,expected=935a7bfb
+RQ4_OPMISMATCH,image=5,op=5,n=18432,fnv=7ff3822b,expected=7aeba47b
+RQ4_OPMISMATCH,image=5,op=6,n=18432,fnv=c24be6c9,expected=5b380277
+RQ4_OPMISMATCH,image=5,op=7,n=4608,fnv=65a2adef,expected=d4098274
+RQ4_OPMISMATCH,image=5,op=8,n=9216,fnv=6d85d9b1,expected=91d1f67d
+RQ4_OPMISMATCH,image=5,op=9,n=9216,fnv=979bb8b6,expected=4f220077
+RQ4_OPMISMATCH,image=5,op=10,n=9216,fnv=3e0b2775,expected=da971c92
+RQ4_OPMISMATCH,image=5,op=11,n=2304,fnv=fa9c1fc1,expected=1b75119a
+RQ4_OPMISMATCH,image=5,op=12,n=4608,fnv=d158762e,expected=f616a4ae
+RQ4_OPMISMATCH,image=5,op=13,n=4608,fnv=77fb2c9a,expected=d77a55fb
+RQ4_OPMISMATCH,image=5,op=14,n=4608,fnv=aab50011,expected=1b1e6f6d
+RQ4_OPMISMATCH,image=5,op=15,n=4608,fnv=a1384373,expected=fefcffa4
+RQ4_OPMISMATCH,image=5,op=16,n=4608,fnv=ce8107ff,expected=3ad05254
+RQ4_OPMISMATCH,image=5,op=17,n=4608,fnv=0fe31f9c,expected=9af5eeca
+RQ4_OPMISMATCH,image=5,op=18,n=4608,fnv=43061ecf,expected=1e9e9d83
+RQ4_OPMISMATCH,image=5,op=19,n=4608,fnv=864fb398,expected=2d1d40b2
+RQ4_OPMISMATCH,image=5,op=20,n=4608,fnv=6354ad80,expected=340eacb0
+RQ4_OPMISMATCH,image=5,op=21,n=4608,fnv=7d3eb075,expected=4f36e06c
+RQ4_OPMISMATCH,image=5,op=22,n=4608,fnv=6cdcb38d,expected=ac79d564
+RQ4_OPMISMATCH,image=5,op=23,n=1152,fnv=124e204b,expected=181ce194
+RQ4_OPMISMATCH,image=5,op=24,n=2304,fnv=3de87f1f,expected=de58ed31
+RQ4_OPMISMATCH,image=5,op=25,n=2304,fnv=626ffeda,expected=e124d4af
+RQ4_OPMISMATCH,image=5,op=26,n=2304,fnv=2451195c,expected=f71ced6e
+RQ4_OPMISMATCH,image=5,op=27,n=256,fnv=32619765,expected=66a4b399
+RQ4_OPMISMATCH,image=5,op=28,n=2,fnv=fdfb3b66,expected=04f6c93d
+RQ4_OPMISMATCH,image=5,op=29,n=2,fnv=fdfb3b66,expected=04f6c93d
+RQ4_OPMISMATCH,image=5,op=30,n=2,fnv=2e1a47a1,expected=351e243d
+RQ4_IMAGE,image=6,invoke_ok=1,ops_run=31,person=98,no_person=-98,expected_person=97,expected_no_person=-97,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147386,hash_us=5109,image_us=4148388,cycles=995372545
+RQ4_OPMISMATCH,image=6,op=0,n=18432,fnv=68a39840,expected=ead18529
+RQ4_OPMISMATCH,image=6,op=1,n=18432,fnv=788d702b,expected=9b40a566
+RQ4_OPMISMATCH,image=6,op=2,n=36864,fnv=c0fdf7eb,expected=a7f3466c
+RQ4_OPMISMATCH,image=6,op=3,n=9216,fnv=a4f58de6,expected=afe7fd9d
+RQ4_OPMISMATCH,image=6,op=4,n=18432,fnv=75781380,expected=171ebdb5
+RQ4_OPMISMATCH,image=6,op=5,n=18432,fnv=b8769795,expected=ef434b20
+RQ4_OPMISMATCH,image=6,op=6,n=18432,fnv=a959cb18,expected=36f31128
+RQ4_OPMISMATCH,image=6,op=7,n=4608,fnv=a25ea565,expected=19a7cf96
+RQ4_OPMISMATCH,image=6,op=8,n=9216,fnv=254c234b,expected=f403547b
+RQ4_OPMISMATCH,image=6,op=9,n=9216,fnv=407cd677,expected=e1400e74
+RQ4_OPMISMATCH,image=6,op=10,n=9216,fnv=3167b979,expected=b97e2f7e
+RQ4_OPMISMATCH,image=6,op=11,n=2304,fnv=9e1b0e48,expected=f5fb5be5
+RQ4_OPMISMATCH,image=6,op=12,n=4608,fnv=d7eceecc,expected=1688fc20
+RQ4_OPMISMATCH,image=6,op=13,n=4608,fnv=3d75a694,expected=90a4e105
+RQ4_OPMISMATCH,image=6,op=14,n=4608,fnv=8d14fd7e,expected=43d207b3
+RQ4_OPMISMATCH,image=6,op=15,n=4608,fnv=3ebad698,expected=b997a046
+RQ4_OPMISMATCH,image=6,op=16,n=4608,fnv=8f70ba10,expected=854769f6
+RQ4_OPMISMATCH,image=6,op=17,n=4608,fnv=5a99b703,expected=01cdceb5
+RQ4_OPMISMATCH,image=6,op=18,n=4608,fnv=087fb62d,expected=e5dfbd3d
+RQ4_OPMISMATCH,image=6,op=19,n=4608,fnv=0bc658e2,expected=176c6d8e
+RQ4_OPMISMATCH,image=6,op=20,n=4608,fnv=190c8ce9,expected=2fc33d18
+RQ4_OPMISMATCH,image=6,op=21,n=4608,fnv=6d43dec6,expected=0bc28ee2
+RQ4_OPMISMATCH,image=6,op=22,n=4608,fnv=37d052e0,expected=1cd31fbf
+RQ4_OPMISMATCH,image=6,op=23,n=1152,fnv=c60bca14,expected=794cf525
+RQ4_OPMISMATCH,image=6,op=24,n=2304,fnv=e31e5df9,expected=6f20fb93
+RQ4_OPMISMATCH,image=6,op=25,n=2304,fnv=1cbd4e8a,expected=ccd4d1a5
+RQ4_OPMISMATCH,image=6,op=26,n=2304,fnv=903f63bc,expected=4310fd78
+RQ4_OPMISMATCH,image=6,op=27,n=256,fnv=ede2fd78,expected=63f3adee
+RQ4_OPMISMATCH,image=6,op=28,n=2,fnv=41949b43,expected=40ae3196
+RQ4_OPMISMATCH,image=6,op=29,n=2,fnv=41949b43,expected=40ae3196
+RQ4_OPMISMATCH,image=6,op=30,n=2,fnv=366fb919,expected=4f6da1dd
+RQ4_IMAGE,image=7,invoke_ok=1,ops_run=31,person=-97,no_person=97,expected_person=-98,expected_no_person=98,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147384,hash_us=5107,image_us=4148391,cycles=995372179
+RQ4_OPMISMATCH,image=7,op=0,n=18432,fnv=c243fbc7,expected=0b0dda82
+RQ4_OPMISMATCH,image=7,op=1,n=18432,fnv=8175566d,expected=8a42dc25
+RQ4_OPMISMATCH,image=7,op=2,n=36864,fnv=39c4e5f2,expected=46a918ef
+RQ4_OPMISMATCH,image=7,op=3,n=9216,fnv=1c8559ab,expected=ff304055
+RQ4_OPMISMATCH,image=7,op=4,n=18432,fnv=440754ca,expected=36c6488e
+RQ4_OPMISMATCH,image=7,op=5,n=18432,fnv=c42f5c91,expected=8a2b7289
+RQ4_OPMISMATCH,image=7,op=6,n=18432,fnv=f00ac8ff,expected=8e3ae3ce
+RQ4_OPMISMATCH,image=7,op=7,n=4608,fnv=b39e9ce5,expected=9e06e6a6
+RQ4_OPMISMATCH,image=7,op=8,n=9216,fnv=cd9443bc,expected=e2dfc222
+RQ4_OPMISMATCH,image=7,op=9,n=9216,fnv=60ceb381,expected=6a110dcc
+RQ4_OPMISMATCH,image=7,op=10,n=9216,fnv=76433a45,expected=d500292f
+RQ4_OPMISMATCH,image=7,op=11,n=2304,fnv=68c5edf4,expected=87a0d524
+RQ4_OPMISMATCH,image=7,op=12,n=4608,fnv=de61c705,expected=efa7ea40
+RQ4_OPMISMATCH,image=7,op=13,n=4608,fnv=79793645,expected=a037618b
+RQ4_OPMISMATCH,image=7,op=14,n=4608,fnv=6e7c54d2,expected=76310e24
+RQ4_OPMISMATCH,image=7,op=15,n=4608,fnv=59055bcf,expected=f87c16fb
+RQ4_OPMISMATCH,image=7,op=16,n=4608,fnv=09004872,expected=1bf7f3d8
+RQ4_OPMISMATCH,image=7,op=17,n=4608,fnv=23b62eeb,expected=865552f4
+RQ4_OPMISMATCH,image=7,op=18,n=4608,fnv=373608cb,expected=23b2ff04
+RQ4_OPMISMATCH,image=7,op=19,n=4608,fnv=cb20aabd,expected=f25d4f81
+RQ4_OPMISMATCH,image=7,op=20,n=4608,fnv=fc69a7c2,expected=da8ccf5e
+RQ4_OPMISMATCH,image=7,op=21,n=4608,fnv=c9081e16,expected=9d5591d3
+RQ4_OPMISMATCH,image=7,op=22,n=4608,fnv=b6fcbd78,expected=f00d7098
+RQ4_OPMISMATCH,image=7,op=23,n=1152,fnv=8560c27b,expected=b904268c
+RQ4_OPMISMATCH,image=7,op=24,n=2304,fnv=8d473fa2,expected=f3b13e52
+RQ4_OPMISMATCH,image=7,op=25,n=2304,fnv=04083b76,expected=e5cad2ca
+RQ4_OPMISMATCH,image=7,op=26,n=2304,fnv=e63f52fc,expected=471819a2
+RQ4_OPMISMATCH,image=7,op=27,n=256,fnv=0c158ebf,expected=3b5f7252
+RQ4_OPMISMATCH,image=7,op=28,n=2,fnv=9ee4df8a,expected=a0ff262d
+RQ4_OPMISMATCH,image=7,op=29,n=2,fnv=9ee4df8a,expected=a0ff262d
+RQ4_OPMISMATCH,image=7,op=30,n=2,fnv=b225a4c9,expected=332b98a1
+RQ4_IMAGE,image=8,invoke_ok=1,ops_run=31,person=114,no_person=-114,expected_person=114,expected_no_person=-114,output_match=1,ops_match=1,first_mismatch_op=0,invoke_us=4147328,hash_us=5091,image_us=4148337,cycles=995358727
+RQ4_OPMISMATCH,image=8,op=0,n=18432,fnv=c5e2f242,expected=81b1718c
+RQ4_OPMISMATCH,image=8,op=1,n=18432,fnv=a67dc1ee,expected=c3baee21
+RQ4_OPMISMATCH,image=8,op=2,n=36864,fnv=64e78108,expected=b8ea5281
+RQ4_OPMISMATCH,image=8,op=3,n=9216,fnv=0b3d22e4,expected=855e654c
+RQ4_OPMISMATCH,image=8,op=4,n=18432,fnv=4a5daedd,expected=60244dcb
+RQ4_OPMISMATCH,image=8,op=5,n=18432,fnv=b868f248,expected=2fda70a3
+RQ4_OPMISMATCH,image=8,op=6,n=18432,fnv=8b73c012,expected=e7ac076b
+RQ4_OPMISMATCH,image=8,op=7,n=4608,fnv=10c6946f,expected=3035e0fb
+RQ4_OPMISMATCH,image=8,op=8,n=9216,fnv=37c32e8a,expected=3aa2d4b9
+RQ4_OPMISMATCH,image=8,op=9,n=9216,fnv=af193712,expected=1675ee69
+RQ4_OPMISMATCH,image=8,op=10,n=9216,fnv=3038f149,expected=a1b6d07d
+RQ4_OPMISMATCH,image=8,op=11,n=2304,fnv=acbc0345,expected=50a25185
+RQ4_OPMISMATCH,image=8,op=12,n=4608,fnv=fac76a56,expected=a1f07309
+RQ4_OPMISMATCH,image=8,op=13,n=4608,fnv=f2069af2,expected=1dae0a0c
+RQ4_OPMISMATCH,image=8,op=14,n=4608,fnv=55f0acd5,expected=6853605b
+RQ4_OPMISMATCH,image=8,op=15,n=4608,fnv=5bc083ec,expected=52032f38
+RQ4_OPMISMATCH,image=8,op=16,n=4608,fnv=6f30bcbf,expected=05082777
+RQ4_OPMISMATCH,image=8,op=17,n=4608,fnv=d2781ad2,expected=d1d94b3f
+RQ4_OPMISMATCH,image=8,op=18,n=4608,fnv=7569d279,expected=60de9ac5
+RQ4_OPMISMATCH,image=8,op=19,n=4608,fnv=7f71cf51,expected=35568f58
+RQ4_OPMISMATCH,image=8,op=20,n=4608,fnv=844147ab,expected=868845a9
+RQ4_OPMISMATCH,image=8,op=21,n=4608,fnv=9474ff08,expected=61f1b97d
+RQ4_OPMISMATCH,image=8,op=22,n=4608,fnv=a319a8a3,expected=c4948ca1
+RQ4_OPMISMATCH,image=8,op=23,n=1152,fnv=1008208d,expected=9382ed8e
+RQ4_OPMISMATCH,image=8,op=24,n=2304,fnv=8e328065,expected=9fc62d99
+RQ4_OPMISMATCH,image=8,op=25,n=2304,fnv=ade3c246,expected=6c723c9f
+RQ4_OPMISMATCH,image=8,op=26,n=2304,fnv=8140f32e,expected=832a02c9
+RQ4_OPMISMATCH,image=8,op=27,n=256,fnv=730bd0ef,expected=46774ba6
+RQ4_OPMISMATCH,image=8,op=28,n=2,fnv=4448bfb3,expected=524086f8
+RQ4_OPMISMATCH,image=8,op=29,n=2,fnv=4448bfb3,expected=524086f8
+RQ4_IMAGE,image=9,invoke_ok=1,ops_run=31,person=81,no_person=-81,expected_person=83,expected_no_person=-83,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147393,hash_us=5112,image_us=4148395,cycles=995374225
+RQ4_OPMISMATCH,image=9,op=0,n=18432,fnv=9dfe20a2,expected=d497ae79
+RQ4_OPMISMATCH,image=9,op=1,n=18432,fnv=70446859,expected=07e392aa
+RQ4_OPMISMATCH,image=9,op=2,n=36864,fnv=09459d3b,expected=526d55db
+RQ4_OPMISMATCH,image=9,op=3,n=9216,fnv=1efedfce,expected=11d18176
+RQ4_OPMISMATCH,image=9,op=4,n=18432,fnv=7dff9f3f,expected=0d48867d
+RQ4_OPMISMATCH,image=9,op=5,n=18432,fnv=0a703ce2,expected=97d97f5c
+RQ4_OPMISMATCH,image=9,op=6,n=18432,fnv=2346b660,expected=c64f5d58
+RQ4_OPMISMATCH,image=9,op=7,n=4608,fnv=cce43751,expected=51330d40
+RQ4_OPMISMATCH,image=9,op=8,n=9216,fnv=f5803afa,expected=741730f4
+RQ4_OPMISMATCH,image=9,op=9,n=9216,fnv=5f6db582,expected=f5eea890
+RQ4_OPMISMATCH,image=9,op=10,n=9216,fnv=afb985bb,expected=63127005
+RQ4_OPMISMATCH,image=9,op=11,n=2304,fnv=d2e5ec27,expected=62be1713
+RQ4_OPMISMATCH,image=9,op=12,n=4608,fnv=c7bef6dd,expected=1e347677
+RQ4_OPMISMATCH,image=9,op=13,n=4608,fnv=6aeee8bc,expected=42ff7299
+RQ4_OPMISMATCH,image=9,op=14,n=4608,fnv=d94e74e0,expected=1dd26c2b
+RQ4_OPMISMATCH,image=9,op=15,n=4608,fnv=99de4994,expected=9a2703de
+RQ4_OPMISMATCH,image=9,op=16,n=4608,fnv=b4077902,expected=c1bc8bd9
+RQ4_OPMISMATCH,image=9,op=17,n=4608,fnv=52dd9289,expected=ab8e371f
+RQ4_OPMISMATCH,image=9,op=18,n=4608,fnv=f6b8bfe0,expected=965f1824
+RQ4_OPMISMATCH,image=9,op=19,n=4608,fnv=85d8da95,expected=f35876d5
+RQ4_OPMISMATCH,image=9,op=20,n=4608,fnv=bf655525,expected=306567be
+RQ4_OPMISMATCH,image=9,op=21,n=4608,fnv=a6554276,expected=98ec2120
+RQ4_OPMISMATCH,image=9,op=22,n=4608,fnv=7143dd49,expected=2253d0a1
+RQ4_OPMISMATCH,image=9,op=23,n=1152,fnv=a58c0e2a,expected=eb066ff4
+RQ4_OPMISMATCH,image=9,op=24,n=2304,fnv=112eba89,expected=40386434
+RQ4_OPMISMATCH,image=9,op=25,n=2304,fnv=2e097737,expected=0558be60
+RQ4_OPMISMATCH,image=9,op=26,n=2304,fnv=81ece8e8,expected=ba9fa2ba
+RQ4_OPMISMATCH,image=9,op=27,n=256,fnv=f7a8900d,expected=1d3a08c9
+RQ4_OPMISMATCH,image=9,op=28,n=2,fnv=8c9d02eb,expected=8e9888e3
+RQ4_OPMISMATCH,image=9,op=29,n=2,fnv=8c9d02eb,expected=8e9888e3
+RQ4_OPMISMATCH,image=9,op=30,n=2,fnv=3f94981d,expected=75906ff1
+RQ4_IMAGE,image=10,invoke_ok=1,ops_run=31,person=113,no_person=-113,expected_person=113,expected_no_person=-113,output_match=1,ops_match=1,first_mismatch_op=0,invoke_us=4147346,hash_us=5087,image_us=4148354,cycles=995362969
+RQ4_OPMISMATCH,image=10,op=0,n=18432,fnv=e0e857ca,expected=5067d8ca
+RQ4_OPMISMATCH,image=10,op=1,n=18432,fnv=9217b4b3,expected=9edcddff
+RQ4_OPMISMATCH,image=10,op=2,n=36864,fnv=3d9cad87,expected=72e1c6d0
+RQ4_OPMISMATCH,image=10,op=3,n=9216,fnv=1c3e7902,expected=71710e15
+RQ4_OPMISMATCH,image=10,op=4,n=18432,fnv=0f3677b5,expected=81646a74
+RQ4_OPMISMATCH,image=10,op=5,n=18432,fnv=62bc8e0f,expected=876de641
+RQ4_OPMISMATCH,image=10,op=6,n=18432,fnv=8e07cdb3,expected=ea2238e0
+RQ4_OPMISMATCH,image=10,op=7,n=4608,fnv=bf729f06,expected=abebe913
+RQ4_OPMISMATCH,image=10,op=8,n=9216,fnv=38faaa99,expected=a91fdf86
+RQ4_OPMISMATCH,image=10,op=9,n=9216,fnv=9a96f760,expected=90e79447
+RQ4_OPMISMATCH,image=10,op=10,n=9216,fnv=78cb16b9,expected=690c7e72
+RQ4_OPMISMATCH,image=10,op=11,n=2304,fnv=ad405824,expected=62aa1c33
+RQ4_OPMISMATCH,image=10,op=12,n=4608,fnv=80fc71c1,expected=8356f2cd
+RQ4_OPMISMATCH,image=10,op=13,n=4608,fnv=0194ebd8,expected=800f9e10
+RQ4_OPMISMATCH,image=10,op=14,n=4608,fnv=bbf82260,expected=539817cb
+RQ4_OPMISMATCH,image=10,op=15,n=4608,fnv=e45e9efb,expected=916af0c5
+RQ4_OPMISMATCH,image=10,op=16,n=4608,fnv=343a7e22,expected=a6c91c5b
+RQ4_OPMISMATCH,image=10,op=17,n=4608,fnv=5b6b24f9,expected=743c2ee6
+RQ4_OPMISMATCH,image=10,op=18,n=4608,fnv=f4a4518f,expected=c072e274
+RQ4_OPMISMATCH,image=10,op=19,n=4608,fnv=eb23b722,expected=4d3ff844
+RQ4_OPMISMATCH,image=10,op=20,n=4608,fnv=c52375dc,expected=2e0ffaa6
+RQ4_OPMISMATCH,image=10,op=21,n=4608,fnv=b6cd3d79,expected=3f3c8002
+RQ4_OPMISMATCH,image=10,op=22,n=4608,fnv=7b195a1d,expected=908d0e64
+RQ4_OPMISMATCH,image=10,op=23,n=1152,fnv=4d6c15b9,expected=974e2c73
+RQ4_OPMISMATCH,image=10,op=24,n=2304,fnv=b363cdb1,expected=6e4c8098
+RQ4_OPMISMATCH,image=10,op=25,n=2304,fnv=9686f7fd,expected=9fff18c8
+RQ4_OPMISMATCH,image=10,op=26,n=2304,fnv=6bab702e,expected=cec8e477
+RQ4_OPMISMATCH,image=10,op=27,n=256,fnv=4d14bf68,expected=455dd576
+RQ4_OPMISMATCH,image=10,op=28,n=2,fnv=605eb216,expected=4260c173
+RQ4_OPMISMATCH,image=10,op=29,n=2,fnv=605eb216,expected=4260c173
+RQ4_IMAGE,image=11,invoke_ok=1,ops_run=31,person=-59,no_person=59,expected_person=-57,expected_no_person=57,output_match=0,ops_match=0,first_mismatch_op=0,invoke_us=4147373,hash_us=5107,image_us=4148373,cycles=995369440
+RQ4_OPMISMATCH,image=11,op=0,n=18432,fnv=6571d8bc,expected=95c9f4e5
+RQ4_OPMISMATCH,image=11,op=1,n=18432,fnv=a6eed890,expected=7ff19fa0
+RQ4_OPMISMATCH,image=11,op=2,n=36864,fnv=23bf3619,expected=43719e3d
+RQ4_OPMISMATCH,image=11,op=3,n=9216,fnv=793eae09,expected=550f2ccf
+RQ4_OPMISMATCH,image=11,op=4,n=18432,fnv=3ff51720,expected=70b23261
+RQ4_OPMISMATCH,image=11,op=5,n=18432,fnv=6a99ce7c,expected=874f8216
+RQ4_OPMISMATCH,image=11,op=6,n=18432,fnv=1bf32310,expected=df519214
+RQ4_OPMISMATCH,image=11,op=7,n=4608,fnv=3ecf4a57,expected=beac1e14
+RQ4_OPMISMATCH,image=11,op=8,n=9216,fnv=951ba796,expected=beab2eb2
+RQ4_OPMISMATCH,image=11,op=9,n=9216,fnv=d9548efc,expected=3f8735be
+RQ4_OPMISMATCH,image=11,op=10,n=9216,fnv=d9cfe3c7,expected=9fe23ae8
+RQ4_OPMISMATCH,image=11,op=11,n=2304,fnv=03f5a7ee,expected=bc2977ce
+RQ4_OPMISMATCH,image=11,op=12,n=4608,fnv=7ef70efa,expected=7c947373
+RQ4_OPMISMATCH,image=11,op=13,n=4608,fnv=942e3683,expected=f5f73d38
+RQ4_OPMISMATCH,image=11,op=14,n=4608,fnv=328bb8c9,expected=ed9cd41f
+RQ4_OPMISMATCH,image=11,op=15,n=4608,fnv=9d72f848,expected=b145f216
+RQ4_OPMISMATCH,image=11,op=16,n=4608,fnv=dc7ea038,expected=616dfcb5
+RQ4_OPMISMATCH,image=11,op=17,n=4608,fnv=3c7479c6,expected=5d8f348d
+RQ4_OPMISMATCH,image=11,op=18,n=4608,fnv=4112caf1,expected=14030673
+RQ4_OPMISMATCH,image=11,op=19,n=4608,fnv=b4449e99,expected=3f1130e3
+RQ4_OPMISMATCH,image=11,op=20,n=4608,fnv=68bf3e2f,expected=6ce10f14
+RQ4_OPMISMATCH,image=11,op=21,n=4608,fnv=fda7f1d7,expected=15810078
+RQ4_OPMISMATCH,image=11,op=22,n=4608,fnv=7db22a7d,expected=1120d337
+RQ4_OPMISMATCH,image=11,op=23,n=1152,fnv=da8d838c,expected=bb600e17
+RQ4_OPMISMATCH,image=11,op=24,n=2304,fnv=8fb4974b,expected=e5239ad9
+RQ4_OPMISMATCH,image=11,op=25,n=2304,fnv=be6a1736,expected=527e5f50
+RQ4_OPMISMATCH,image=11,op=26,n=2304,fnv=78f3ea69,expected=1ce6ae1f
+RQ4_OPMISMATCH,image=11,op=27,n=256,fnv=80a3e078,expected=7a180e2a
+RQ4_OPMISMATCH,image=11,op=28,n=2,fnv=b7bd6d3a,expected=acc12d80
+RQ4_OPMISMATCH,image=11,op=29,n=2,fnv=b7bd6d3a,expected=acc12d80
+RQ4_OPMISMATCH,image=11,op=30,n=2,fnv=cd02b2cd,expected=fafe7e09
+RQ4_RESULT,verdict=FAIL,images=12,outputs_match=5,ops_match=9,ops_total=372,first_fail_image=0,first_fail_op=0,identity_us=81102,setup_us=23745,kat_us=52064684,invoke_us_total=49768361,hash_us_total=61217,minimal_test_us=4229469,boot_to_verdict_us=52207384
+RQ4_ACTUATION,BLOCKED
+RQ4_HEAP,free_internal=222424,min_free_internal=218072
+RQ4_DONE

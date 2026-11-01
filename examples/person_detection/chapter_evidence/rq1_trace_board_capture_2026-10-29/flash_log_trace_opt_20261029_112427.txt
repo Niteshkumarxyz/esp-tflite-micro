@@ -1,0 +1,87 @@
+COMMAND: C:\Espressif\python_env\idf6.0_py3.13_env\Scripts\python.exe -m esptool --chip esp32 -p COM5 -b 460800 --before default-reset --after hard-reset write-flash @flash_args
+CWD: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\build_rq1_trace_opt_20261029
+RETURN_CODE: 0
+
+esptool --chip esp32 -p COM5 -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-freq 80m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0xc000 partition_table/partition-table.bin 0x13000 ota_data_initial.bin 0x20000 person_detection.bin
+esptool v5.6.0
+Serial port COM5:
+Connecting.....
+Connected to ESP32 on COM5:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                fc:b4:67:4e:38:b4
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+Flash will be erased from 0x00001000 to 0x00007fff...
+Compressed 27888 bytes to 17628...
+Writing at 0x00007696 ===========================>    92.9% 16.00kB/17.21kB [0s] 
+Writing at 0x00007cf0 ============================== 100.0% 17.21kB/17.21kB [0s] 
+Wrote 27888 bytes (17628 compressed) at 0x00001000 in 0.6 seconds (350.9 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'partition_table/partition-table.bin' at 0x0000c000...
+Flash will be erased from 0x0000c000 to 0x0000cfff...
+Compressed 3072 bytes to 126...
+Writing at 0x0000cc00 ============================== 100.0% 126B/126B [0s] 
+Wrote 3072 bytes (126 compressed) at 0x0000c000 in 0.0 seconds (755.3 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'ota_data_initial.bin' at 0x00013000...
+Flash will be erased from 0x00013000 to 0x00014fff...
+Compressed 8192 bytes to 31...
+Writing at 0x00015000 ============================== 100.0% 31B/31B [0s] 
+Wrote 8192 bytes (31 compressed) at 0x00013000 in 0.1 seconds (1294.2 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'person_detection.bin' at 0x00020000...
+Flash will be erased from 0x00020000 to 0x000c5fff...
+Compressed 678352 bytes to 490365...
+Writing at 0x0002beeb =                                3.3% 16.00kB/478.87kB [0s] 
+Writing at 0x0003056d ==                               6.7% 32.00kB/478.87kB [0s] 
+Writing at 0x00034994 ===                             10.0% 48.00kB/478.87kB [1s] 
+Writing at 0x00038e9c ====                            13.4% 64.00kB/478.87kB [1s] 
+Writing at 0x0003d2a6 =====                           16.7% 80.00kB/478.87kB [1s] 
+Writing at 0x000416a1 ======                          20.0% 96.00kB/478.87kB [2s] 
+Writing at 0x00045b4b =======                         23.4% 112.00kB/478.87kB [2s] 
+Writing at 0x00049f76 ========                        26.7% 128.00kB/478.87kB [3s] 
+Writing at 0x0004e2ca =========                       30.1% 144.00kB/478.87kB [3s] 
+Writing at 0x000527ef ==========                      33.4% 160.00kB/478.87kB [3s] 
+Writing at 0x00056c36 ===========                     36.8% 176.00kB/478.87kB [4s] 
+Writing at 0x0005afda ============                    40.1% 192.00kB/478.87kB [4s] 
+Writing at 0x0005f3ea =============                   43.4% 208.00kB/478.87kB [5s] 
+Writing at 0x00066529 ==============                  46.8% 224.00kB/478.87kB [5s] 
+Writing at 0x00073dc1 ===============                 50.1% 240.00kB/478.87kB [5s] 
+Writing at 0x0007a7d9 ================                53.5% 256.00kB/478.87kB [6s] 
+Writing at 0x0007f9dc =================               56.8% 272.00kB/478.87kB [6s] 
+Writing at 0x000850f9 ==================              60.1% 288.00kB/478.87kB [6s] 
+Writing at 0x0008999f ===================             63.5% 304.00kB/478.87kB [7s] 
+Writing at 0x0008ef73 ====================            66.8% 320.00kB/478.87kB [7s] 
+Writing at 0x000966e7 =====================           70.2% 336.00kB/478.87kB [8s] 
+Writing at 0x0009c0de ======================          73.5% 352.00kB/478.87kB [8s] 
+Writing at 0x000a1db5 =======================         76.8% 368.00kB/478.87kB [8s] 
+Writing at 0x000a6d21 ========================        80.2% 384.00kB/478.87kB [9s] 
+Writing at 0x000abf54 =========================       83.5% 400.00kB/478.87kB [9s] 
+Writing at 0x000b1307 ==========================      86.9% 416.00kB/478.87kB [10s] 
+Writing at 0x000b6273 ===========================     90.2% 432.00kB/478.87kB [10s] 
+Writing at 0x000bb56c ============================    93.6% 448.00kB/478.87kB [10s] 
+Writing at 0x000c07ba =============================   96.9% 464.00kB/478.87kB [11s] 
+Writing at 0x000c59d0 ============================== 100.0% 478.87kB/478.87kB [11s] 
+Wrote 678352 bytes (490365 compressed) at 0x00020000 in 11.8 seconds (459.4 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...
+

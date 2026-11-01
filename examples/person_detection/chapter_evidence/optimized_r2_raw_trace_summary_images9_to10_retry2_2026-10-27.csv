@@ -1,0 +1,2 @@
+﻿image,result,trace_records,raw_records,bytes,sha256,firmware_sha256,fresh_prompt_confirmed,file,raw_present
+9,"IMAGE_RESULT,image=9,invoke_ok=1,person_raw_int8=83,no_person_raw_int8=-83,latency_ms=58467",31,3625,678653,374e2203919794a3e5bf0ac898b608390f8340e586801f0bad907c787408f5b5,F70EA1D4FF93289BB32BB3C89B20A70C3C232264B1B9B3793BEC43EB94D9F4BE,True,optimized_r2_tensor_trace_image_9_freshboot_retry2_2026-10-27.txt,True

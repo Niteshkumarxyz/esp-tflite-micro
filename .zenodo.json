@@ -1,0 +1,10 @@
+{
+  "upload_type": "software",
+  "creators": [
+    {"name": "Kumar, Nitesh", "affiliation": "Amity Institute of Information Technology, Amity University Patna"},
+    {"name": "Kumar, Vikash", "affiliation": "Amity University Patna"},
+    {"name": "Kumari, Pinkee", "affiliation": "Amity Institute of Information Technology, Amity University Patna"}
+  ],
+  "description": "Research fork of Espressif's esp-tflite-micro used for the book chapter \"Same Model, Different Robot: Checking Int8 Runtimes Before the Robot Moves\". It contains benchmark, long-run and operator-trace instrumentation for the person_detection example on an ESP32-D0WD-V3, a boot-time acceptance-test firmware, a row-following policy (W2) with its hardware-in-the-loop harness, Arm Cortex-M and x86 build scripts, the code-layout (IRAM) and skip-nudge requantization experiments, the raw serial logs and the figure scripts. Built with ESP-IDF v6.0.3 and ESP-NN 1.4.1.",
+  "keywords": ["TensorFlow Lite Micro", "ESP32", "ESP-NN", "CMSIS-NN", "int8 quantization", "microcontroller inference", "boot-time acceptance test", "code layout", "reproducibility", "field robotics"]
+}

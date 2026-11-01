@@ -1,0 +1,78 @@
+COMMAND: C:\Espressif\python_env\idf6.0_py3.13_env\Scripts\python.exe -m esptool --chip esp32 -p COM5 -b 460800 --before default-reset --after hard-reset write-flash @flash_args
+CWD: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\rq4_boot_kat\build_rq4nt_r1sr
+RETURN_CODE: 0
+
+esptool --chip esp32 -p COM5 -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-freq 80m --flash-size 4MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 rq4_boot_kat.bin
+esptool v5.6.0
+Serial port COM5:
+Connecting.....
+Connected to ESP32 on COM5:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                fc:b4:67:4e:38:b4
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00001000...
+SHA digest in image updated.
+Flash will be erased from 0x00001000 to 0x00007fff...
+Compressed 26192 bytes to 16607...
+Writing at 0x0000752e =============================>  98.7% 16.00kB/16.22kB [0s] 
+Writing at 0x00007650 ============================== 100.0% 16.22kB/16.22kB [0s] 
+Wrote 26192 bytes (16607 compressed) at 0x00001000 in 0.6 seconds (337.4 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 3072 bytes to 105...
+Writing at 0x00008c00 ============================== 100.0% 105B/105B [0s] 
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (870.4 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'rq4_boot_kat.bin' at 0x00010000...
+Flash will be erased from 0x00010000 to 0x000adfff...
+Compressed 645392 bytes to 461092...
+Writing at 0x0001add9 =                                3.6% 16.00kB/450.29kB [0s] 
+Writing at 0x0001f1b5 ==                               7.1% 32.00kB/450.29kB [0s] 
+Writing at 0x000235da ===                             10.7% 48.00kB/450.29kB [1s] 
+Writing at 0x00027ae0 ====                            14.2% 64.00kB/450.29kB [1s] 
+Writing at 0x0002bee5 =====                           17.8% 80.00kB/450.29kB [1s] 
+Writing at 0x000302e9 ======                          21.3% 96.00kB/450.29kB [2s] 
+Writing at 0x0003477c =======                         24.9% 112.00kB/450.29kB [2s] 
+Writing at 0x00038b9e ========>                       28.4% 128.00kB/450.29kB [3s] 
+Writing at 0x0003cf01 =========>                      32.0% 144.00kB/450.29kB [3s] 
+Writing at 0x0004141a ==========>                     35.5% 160.00kB/450.29kB [3s] 
+Writing at 0x00045807 ===========>                    39.1% 176.00kB/450.29kB [4s] 
+Writing at 0x00049c13 ============>                   42.6% 192.00kB/450.29kB [4s] 
+Writing at 0x0004e01e =============>                  46.2% 208.00kB/450.29kB [5s] 
+Writing at 0x00055748 ==============>                 49.7% 224.00kB/450.29kB [5s] 
+Writing at 0x00062e64 ===============>                53.3% 240.00kB/450.29kB [5s] 
+Writing at 0x000694a7 =================               56.9% 256.00kB/450.29kB [6s] 
+Writing at 0x0006e6d0 ==================              60.4% 272.00kB/450.29kB [6s] 
+Writing at 0x00073ea5 ===================             64.0% 288.00kB/450.29kB [7s] 
+Writing at 0x000785f8 ====================            67.5% 304.00kB/450.29kB [7s] 
+Writing at 0x0007db8c =====================           71.1% 320.00kB/450.29kB [7s] 
+Writing at 0x0008516f ======================          74.6% 336.00kB/450.29kB [8s] 
+Writing at 0x0008ad97 =======================         78.2% 352.00kB/450.29kB [8s] 
+Writing at 0x000924fe ========================>       81.7% 368.00kB/450.29kB [9s] 
+Writing at 0x00097896 =========================>      85.3% 384.00kB/450.29kB [9s] 
+Writing at 0x0009c7fc ==========================>     88.8% 400.00kB/450.29kB [9s] 
+Writing at 0x000a1a82 ===========================>    92.4% 416.00kB/450.29kB [10s] 
+Writing at 0x000a7011 ============================>   95.9% 432.00kB/450.29kB [10s] 
+Writing at 0x000accc3 =============================>  99.5% 448.00kB/450.29kB [11s] 
+Writing at 0x000ad910 ============================== 100.0% 450.29kB/450.29kB [11s] 
+Wrote 645392 bytes (461092 compressed) at 0x00010000 in 11.3 seconds (458.1 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...
+

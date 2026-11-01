@@ -1,0 +1,38 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261021201117
+Username: NITESH\nk947
+RunAs User: NITESH\nk947
+Configuration Name: 
+Machine: NITESH (Microsoft Windows NT 10.0.26200.0)
+Host Application: powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -NoExit -File C:\Espressif\tools\Microsoft.v6.0.3.PowerShell_profile.ps1
+Process ID: 18700
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is .\examples\person_detection\w1_benchmark_100run_2026-10-21_capture2.txt
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) idf.py -C .\examples\person_detection -p COM5 monitor
+
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) $logPath = ".\examples\person_detection\w1_benchmark_100run_2026-10-21_capture2.txt"
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) Select-String -Path $logPath -Pattern "BENCH_START|BENCH_SUMMARY"
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) (Select-String -Path $logPath -Pattern "BENCH_SAMPLE,\d+,").Count
+0
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) idf.py -C .\examples\person_detection -p COM5 monitor
+
+PS C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro>
+(host-venv) Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261021201706
+**********************

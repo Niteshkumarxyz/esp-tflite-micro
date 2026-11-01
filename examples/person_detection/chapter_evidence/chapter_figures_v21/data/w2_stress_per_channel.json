@@ -1,0 +1,58 @@
+{
+ "stress": {
+  "obs_noise": 0.05,
+  "us_noise": 0.04,
+  "slip": 0.15,
+  "us_dropout": 0.4
+ },
+ "seeds": [
+  5000,
+  5999
+ ],
+ "model": "per_channel",
+ "TFLM_reference_double_rounding": {
+  "success": 947,
+  "n": 1000,
+  "mean_rms_xte_m": 0.024144721161927167,
+  "vs_double_rounding": {
+   "ref_only": 0,
+   "this_only": 0,
+   "mcnemar_p": 1.0,
+   "changed_seeds": []
+  }
+ },
+ "LiteRT_REF_single_rounding_family": {
+  "success": 944,
+  "n": 1000,
+  "mean_rms_xte_m": 0.024165787099812906,
+  "vs_double_rounding": {
+   "ref_only": 4,
+   "this_only": 1,
+   "mcnemar_p": 0.375,
+   "changed_seeds": [
+    5361,
+    5572,
+    5900,
+    5909,
+    5974
+   ]
+  }
+ },
+ "LiteRT_XNNPACK": {
+  "success": 944,
+  "n": 1000,
+  "mean_rms_xte_m": 0.02416589925440106,
+  "vs_double_rounding": {
+   "ref_only": 4,
+   "this_only": 1,
+   "mcnemar_p": 0.375,
+   "changed_seeds": [
+    5361,
+    5572,
+    5900,
+    5909,
+    5974
+   ]
+  }
+ }
+}

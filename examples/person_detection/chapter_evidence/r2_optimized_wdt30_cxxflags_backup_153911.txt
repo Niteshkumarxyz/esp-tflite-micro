@@ -1,0 +1,7 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=C:/Users/nk947/Downloads/robot-runtime-research/esp-tflite-micro/examples/person_detection/build_rq1_tensor_trace_r2_optimized_wdt30_20261027/specs/picolibc.specs"
+-fno-rtti

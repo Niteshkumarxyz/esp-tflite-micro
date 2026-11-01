@@ -1,0 +1,21 @@
+Cycle-count benchmark validation record
+Date: 2026-10-22
+Port: COM5
+Build manifest: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\evidence\cycle_count\cycle_optimized_build_manifest_20261022.csv
+Firmware binary: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\build_cycle_optimized_20261021\person_detection.bin
+Firmware binary SHA256: B13CFAA2F117215B6F081FAC2A8C8FAA13BF559F94CD5ABC67566019CED2B035
+Firmware binary hash matches build manifest: True
+Raw log: cycle_benchmark_100_retry2_raw_20261022.txt
+Raw log SHA256: 8CDE20A06D186DF9E989364B6E2CA98C8389A5A3EF21D53EB7E7294D8F60D18A
+Samples CSV SHA256: 8D6996BD8B69958A82447AB538CA869C39358590096D7B149287896DAA6EDA7C
+Summary CSV SHA256: 071D596FBA5A77DD370E796CD6F2078EC83F3071076AC433CD85845C7689F342
+Sample count: 100
+Run order valid: True
+10-image cycle sequence valid: True
+Failed samples: 0
+Complete firmware summary: BENCH_SUMMARY,runs=100,failures=0,mean_us=401676,median_us=401678,p95_nearest_rank_us=401760,min_us=401585,max_us=401762
+Recomputed mean Invoke time (us): 401676.65
+Recomputed mean cycles: 96401987.33
+Mean cycles divided by mean microseconds: 239.999
+Timing region: interpreter_Invoke_only
+Interpretation: 100 repeated samples across 10 demo images, not 100 unique images.

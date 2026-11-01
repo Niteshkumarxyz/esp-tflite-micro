@@ -1,0 +1,3 @@
+﻿runtime,image_id,requested_runs,successful_invocations,failed_invocations,unique_raw_output_pairs,raw_outputs_stable,person_raw_int8,no_person_raw_int8,mean_latency_ms,median_latency_ms,p95_latency_ms_nearest_rank,min_latency_ms,max_latency_ms,mean_invoke_us,min_invoke_us,max_invoke_us,firmware_sha256
+R2A_ANSI_C,10,10,10,0,1,True,113,-113,542.0,542.0,542.0,542.0,542.0,528358.3,528352.0,528375.0,4017A79C30E47A4FC15584617ACC5A86A7CF9511CB8D6F2500A22AE4B9B10143
+R2A_ANSI_C,11,10,10,0,1,True,-57,57,542.0,542.0,542.0,542.0,542.0,528315.8,528306.0,528321.0,4017A79C30E47A4FC15584617ACC5A86A7CF9511CB8D6F2500A22AE4B9B10143

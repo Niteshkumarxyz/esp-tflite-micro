@@ -1,0 +1,67 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6340
+load:0x40078000,len:15884
+load:0x40080400,len:3920
+entry 0x40080644
+I (27) boot: ESP-IDF v6.0.3 2nd stage bootloader
+I (27) boot: compile time Nov  1 2026 15:00:45
+I (28) boot: Multicore bootloader
+I (29) boot: chip revision: v3.1
+I (32) boot.esp32: SPI Speed      : 40MHz
+I (35) boot.esp32: SPI Mode       : DIO
+I (39) boot.esp32: SPI Flash Size : 2MB
+I (42) boot: Enabling RNG early entropy source...
+I (47) boot: Partition Table:
+I (49) boot: ## Label            Usage          Type ST Offset   Length
+I (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (69) boot:  2 factory          factory app      00 00 00010000 00100000
+I (75) boot: End of partition table
+I (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=08600h ( 34304) map
+I (99) esp_image: segment 1: paddr=00018628 vaddr=3ffb0000 size=028a8h ( 10408) load
+I (103) esp_image: segment 2: paddr=0001aed8 vaddr=40080000 size=05140h ( 20800) load
+I (112) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0beb8h ( 48824) map
+I (130) esp_image: segment 4: paddr=0002bee0 vaddr=40085140 size=04f20h ( 20256) load
+I (138) esp_image: segment 5: paddr=00030e08 vaddr=50000000 size=00028h (    40) load
+I (144) boot: Loaded app from partition at offset 0x10000
+I (144) boot: Disabling RNG early entropy source...
+I (158) cpu_start: Multicore app
+I (166) cpu_start: GPIO 3 and 1 are used as console UART I/O pins
+I (166) cpu_start: Pro cpu start user code
+I (166) cpu_start: cpu freq: 240000000 Hz
+I (168) app_init: Application information:
+I (172) app_init: Project name:     skipnudge_requant_test
+I (177) app_init: App version:      v1.4.1-5-g15dd18a-dirty
+I (182) app_init: Compile time:     Nov  1 2026 15:00:03
+I (187) app_init: ELF file SHA256:  1918b3b7c...
+I (192) app_init: ESP-IDF:          v6.0.3
+I (195) efuse_init: Min chip rev:     v0.0
+I (199) efuse_init: Max chip rev:     v3.99 
+I (203) efuse_init: Chip rev:         v3.1
+I (207) heap_init: Initializing. RAM available for dynamic allocation:
+I (213) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (218) heap_init: At 3FFB3258 len 0002CDA8 (179 KiB): DRAM
+I (224) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (229) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (235) heap_init: At 4008A060 len 00015FA0 (87 KiB): IRAM
+I (241) spi_flash: detected chip: generic
+I (243) spi_flash: flash io: dio
+W (246) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (260) main_task: Started on CPU0
+I (260) main_task: Calling app_main()
+REQ_BEGIN,header=esp-nn-1.4.1-common_functions.h,cpu_mhz=240
+REQ_EXAMPLE,x=2093610282,m=1800895781,shift=-31,ref=1,fast=-1
+REQ_EXAMPLE,x=1873917376,m=2071326053,shift=-31,ref=1,fast=-1
+REQ_EXAMPLE,x=1747639028,m=1622732133,shift=-31,ref=1,fast=-1
+REQ_RESULT,set=random_acc_below_2^26,cases=1000000,differ=0,at_int32_max_overflow=0
+REQ_RESULT,set=random_acc_below_2^29,cases=1000000,differ=0,at_int32_max_overflow=0
+REQ_RESULT,set=random_any_int32,cases=1000000,differ=6126,at_int32_max_overflow=6126
+REQ_RESULT,set=exact_multiply_ties_acc_below_2^26,cases=3328000,differ=0,at_int32_max_overflow=0
+REQ_RESULT,set=exact_shift_ties,cases=600000,differ=0,at_int32_max_overflow=0
+REQ_RESULT,set=near_int32_max,cases=120,differ=115,at_int32_max_overflow=115
+REQ_DONE,elapsed_us=5642446

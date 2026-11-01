@@ -1,0 +1,79 @@
+RQ4 run 20261029_203054 (script version 3); IDF_PATH=C:\esp\v6.0.3\esp-idf; keep-awake requested: True
+[r1] building ... (-B build_rq4v3_r1 -D SDKCONFIG=build_rq4v3_r1/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r1 build)
+[r1]   step 200/1260
+[r1]   step 400/1260
+[r1]   step 600/1260
+[r1]   step 800/1260
+[r1]   step 1000/1260
+[r1]   step 1200/1260
+[r1] build return code 0 in 482 s
+[r1] configuration OK; BIN 7dfaa87056132b43..., ELF 28c24357b6e830c6...
+[r2a] building ... (-B build_rq4v3_r2a -D SDKCONFIG=build_rq4v3_r2a/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r2a build)
+[r2a]   step 200/1260
+[r2a]   step 400/1260
+[r2a]   step 600/1260
+[r2a]   step 800/1260
+[r2a]   step 1000/1260
+[r2a]   step 1200/1260
+[r2a] build return code 0 in 347 s
+[r2a] configuration OK; BIN ae724d9aeddd4cd5..., ELF 5d38559fdd4591ca...
+[r2] building ... (-B build_rq4v3_r2 -D SDKCONFIG=build_rq4v3_r2/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r2 build)
+[r2]   step 200/1260
+[r2]   step 400/1260
+[r2]   step 600/1260
+[r2]   step 800/1260
+[r2]   step 1000/1260
+[r2]   step 1200/1260
+[r2] build return code 0 in 453 s
+[r2] configuration OK; BIN 240abd7e046b304d..., ELF d15b086e54005c6b...
+[r2sn] building ... (-B build_rq4v3_r2sn -D SDKCONFIG=build_rq4v3_r2sn/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r2sn build)
+[r2sn]   step 200/1260
+[r2sn]   step 400/1260
+[r2sn]   step 600/1260
+[r2sn]   step 800/1260
+[r2sn]   step 1000/1260
+[r2sn]   step 1200/1260
+[r2sn] build return code 0 in 1548 s
+[r2sn] configuration OK; BIN 569c7252b28a7cb2..., ELF adda46bdfe8221ee...
+[r1sr] building ... (-B build_rq4v3_r1sr -D SDKCONFIG=build_rq4v3_r1sr/sdkconfig -D SDKCONFIG_DEFAULTS=sdkconfig.defaults;sdkconfig.defaults.r1 -D RQ4_SINGLE_ROUNDING=1 build)
+[r1sr]   step 200/1260
+[r1sr]   step 400/1260
+[r1sr]   step 600/1260
+[r1sr]   step 800/1260
+[r1sr]   step 1000/1260
+[r1sr]   step 1200/1260
+[r1sr] build return code 0 in 339 s
+[r1sr] configuration OK; BIN dce3798fa4c8ef61..., ELF 24bb0010cacd4e42...
+[r1] flash OK (3/3 regions verified)
+[r1] boot 1: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 50275362 us; identity checks True
+[r1] boot 2: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 50275362 us; identity checks True
+[r1] boot 3: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 50275363 us; identity checks True
+[r1] boot 4: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 50275362 us; identity checks True
+[r1] boot 5: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 50275362 us; identity checks True
+[r2a] flash OK (3/3 regions verified)
+[r2a] boot 1: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 6843627 us; identity checks True
+[r2a] boot 2: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 6843627 us; identity checks True
+[r2a] boot 3: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 6843627 us; identity checks True
+[r2a] boot 4: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 6843627 us; identity checks True
+[r2a] boot 5: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 6843627 us; identity checks True
+[r2] flash OK (3/3 regions verified)
+[r2] boot 1: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5283012 us; identity checks True
+[r2] boot 2: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5283014 us; identity checks True
+[r2] boot 3: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5283006 us; identity checks True
+[r2] boot 4: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5283009 us; identity checks True
+[r2] boot 5: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5283012 us; identity checks True
+[r2sn] flash OK (3/3 regions verified)
+[r2sn] boot 1: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5163225 us; identity checks True
+[r2sn] boot 2: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5163224 us; identity checks True
+[r2sn] boot 3: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5163225 us; identity checks True
+[r2sn] boot 4: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5163225 us; identity checks True
+[r2sn] boot 5: verdict PASS (expected PASS); outputs 12/12, ops 372/372, first fail image -1 op -1; KAT 5163225 us; identity checks True
+[r1sr] flash OK (3/3 regions verified)
+[r1sr] boot 1: verdict FAIL (expected FAIL); outputs 5/12, ops 9/372, first fail image 0 op 0; KAT 52064682 us; identity checks True
+[r1sr] boot 2: verdict FAIL (expected FAIL); outputs 5/12, ops 9/372, first fail image 0 op 0; KAT 52064684 us; identity checks True
+[r1sr] boot 3: verdict FAIL (expected FAIL); outputs 5/12, ops 9/372, first fail image 0 op 0; KAT 52064684 us; identity checks True
+[r1sr] boot 4: verdict FAIL (expected FAIL); outputs 5/12, ops 9/372, first fail image 0 op 0; KAT 52064684 us; identity checks True
+[r1sr] boot 5: verdict FAIL (expected FAIL); outputs 5/12, ops 9/372, first fail image 0 op 0; KAT 52064684 us; identity checks True
+
+RQ4 OVERALL: ALL BUILDS GAVE THE EXPECTED VERDICT
+Outputs: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\chapter_evidence\rq4_boot_kat_2026-10-29

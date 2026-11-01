@@ -1,0 +1,80 @@
+[1mdiff --git a/examples/hello_world/main/CMakeLists.txt b/examples/hello_world/main/CMakeLists.txt[m
+[1mindex f4c3f41..9738d9f 100644[m
+[1m--- a/examples/hello_world/main/CMakeLists.txt[m
+[1m+++ b/examples/hello_world/main/CMakeLists.txt[m
+[36m@@ -1,9 +1,9 @@[m
+[31m-[m
+ #[m
+ # Main component of TF Micro project 'micro_speech'.[m
+ #[m
+ [m
+ idf_component_register([m
+     SRCS main.cc main_functions.cc constants.cc output_handler.cc model.cc[m
+[31m-    PRIV_REQUIRES spi_flash[m
+[31m-    INCLUDE_DIRS "")[m
+[32m+[m[32m    PRIV_REQUIRES spi_flash esp_timer[m
+[32m+[m[32m    INCLUDE_DIRS ""[m
+[32m+[m[32m)[m
+\ No newline at end of file[m
+[1mdiff --git a/examples/hello_world/main/main_functions.cc b/examples/hello_world/main/main_functions.cc[m
+[1mindex d98a27c..8a7fd18 100644[m
+[1m--- a/examples/hello_world/main/main_functions.cc[m
+[1m+++ b/examples/hello_world/main/main_functions.cc[m
+[36m@@ -18,6 +18,7 @@[m [mlimitations under the License.[m
+ #include "tensorflow/lite/micro/micro_interpreter.h"[m
+ #include "tensorflow/lite/micro/system_setup.h"[m
+ #include "tensorflow/lite/schema/schema_generated.h"[m
+[32m+[m[32m#include "esp_timer.h"[m
+ [m
+ #include "main_functions.h"[m
+ #include "model.h"[m
+[36m@@ -59,11 +60,20 @@[m [mvoid setup() {[m
+   interpreter = &static_interpreter;[m
+ [m
+   // Allocate memory from the tensor_arena for the model's tensors.[m
+[31m-  TfLiteStatus allocate_status = interpreter->AllocateTensors();[m
+[31m-  if (allocate_status != kTfLiteOk) {[m
+[31m-    MicroPrintf("AllocateTensors() failed");[m
+[31m-    return;[m
+[31m-  }[m
+[32m+[m[32mTfLiteStatus allocate_status = interpreter->AllocateTensors();[m
+[32m+[m
+[32m+[m[32mif (allocate_status != kTfLiteOk) {[m
+[32m+[m[32m  MicroPrintf("AllocateTensors() failed");[m
+[32m+[m[32m  return;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mMicroPrintf("Tensor arena used bytes: %u",[m
+[32m+[m[32m            static_cast<unsigned int>(interpreter->arena_used_bytes()));[m
+[32m+[m
+[32m+[m[32m  // Measure actual tensor arena memory usage.[m
+[32m+[m[32m  MicroPrintf("Tensor arena used bytes: %u",[m
+[32m+[m[32m              static_cast<unsigned int>([m
+[32m+[m[32m                  interpreter->arena_used_bytes()));[m
+ [m
+   // Obtain pointers to the model's input and output tensors.[m
+   input = interpreter->input(0);[m
+[36m@@ -88,11 +98,21 @@[m [mvoid loop() {[m
+   // Place the quantized input in the model's input tensor[m
+   input->data.int8[0] = x_quantized;[m
+ [m
+[31m-  // Run inference, and report any error[m
+[32m+[m[32m    // Run inference and measure execution time[m
+[32m+[m[32m  const int64_t inference_start_us = esp_timer_get_time();[m
+[32m+[m
+   TfLiteStatus invoke_status = interpreter->Invoke();[m
+[32m+[m
+[32m+[m[32m  const int64_t inference_time_us =[m
+[32m+[m[32m      esp_timer_get_time() - inference_start_us;[m
+[32m+[m
+[32m+[m[32m  MicroPrintf("inference_time_us: %d",[m
+[32m+[m[32m              static_cast<int>(inference_time_us));[m
+[32m+[m
+[32m+[m[32m  // Report any inference error[m
+   if (invoke_status != kTfLiteOk) {[m
+     MicroPrintf("Invoke failed on x: %f\n",[m
+[31m-                         static_cast<double>(x));[m
+[32m+[m[32m                static_cast<double>(x));[m
+     return;[m
+   }[m
+ [m

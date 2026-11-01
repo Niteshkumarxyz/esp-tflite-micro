@@ -1,0 +1,15 @@
+R1 cycle-count build configuration audit
+Date: 2026-10-22
+Build directory: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\examples\person_detection\build_cycle_r1_20261022
+Build exit code reported: 0
+ESP-NN enabled: False (generated CONFIG_ESP_TFLITE_MICRO_USE_ESP_NN define absent)
+CONFIG_NN_OPTIMIZED: 1
+CPU frequency: 240 MHz
+Firmware binary size: 728672 bytes
+Binary SHA256: B7BC64FB4E941458F81A23E36115560198BB5E486C5F25613D7919D4F7946758
+Build log: C:\Users\nk947\Downloads\robot-runtime-research\esp-tflite-micro\evidence\cycle_count\r1_cycle_build_retry1_20261022.txt
+
+Note: CONFIG_NN_OPTIMIZED remains enabled; this setting is recorded separately
+from CONFIG_ESP_TFLITE_MICRO_USE_ESP_NN. Interpret runtime differences against
+the generated configuration, not just the option name.
+No firmware flashed by this audit step.

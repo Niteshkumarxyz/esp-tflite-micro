@@ -1,0 +1,5 @@
+﻿"Dataset","Runs","MeanExactUs","MedianUs","P95Us","MinUs","MaxUs","Failures","FirmwareSHA256","EvidenceStatus","ManuscriptAction"
+"Historical_2026-10-21","1000","401644.652","401644.5","401726","401554","401729","0","NOT_DIRECTLY_RECORDED","SAMPLES_AND_TRANSCRIPT_HASHES_VERIFIED","Historical result; disclose firmware provenance limitation"
+"Corrected_2026-10-24","1000","412863.498","412864","412888","412841","412889","0","97F246CFEF57F66127A3C0C00E4A91639D3F492FD68BFA327B1CB234779A7460","RAW_SAMPLES_SUMMARY_AND_MANIFEST_VERIFIED","Retain as a distinct firmware build"
+"Latest_2026-10-24","1000","412864.2","412866","412887","412839","412910","0","C144B7FF33139E2C12810430893F5016EBCF53B0030669EAAB65E0B2BFFB3B48","RAW_SAMPLES_SUMMARY_AND_MANIFEST_VERIFIED","Primary result for this recorded build/configuration"
+"Legacy_Chapter_Claim","1000","401624","401627","401655","401586","401657","","UNKNOWN","RAW_SOURCE_NOT_FOUND","EXCLUDE pending original raw evidence"

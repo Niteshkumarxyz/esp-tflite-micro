@@ -1,0 +1,4 @@
+# R2: ESP-NN optimized kernels (on the classic ESP32 FULLY_CONNECTED is still ANSI C)
+CONFIG_ESP_TFLITE_MICRO_USE_ESP_NN=y
+# CONFIG_NN_ANSI_C is not set
+CONFIG_NN_OPTIMIZED=y

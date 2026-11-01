@@ -1,0 +1,8 @@
+
+esp> 
+esp> benchmark 1
+BENCH_START,runs=1,warmup=10,images=10,timing=interpreter_Invoke_only
+BENCH_SAMPLES_BEGIN
+BENCH_SAMPLE,1,0,4141078,993858185,115,-115,1
+BENCH_SAMPLES_END
+BENCH_SUMMARY,runs=1,failures=0,mean_us=4141078,median_us=4141078,p95_nearest_rank_us=4141078,min_us=4141078,max_us=41410

@@ -1,0 +1,4 @@
+﻿"Runtime","SourceLog","Samples","MeanUs","MedianUs","P95NearestRankUs","MinUs","MaxUs","Failures","Provenance","SpeedupVsR1"
+"R1 Reference","log.person_detection.20261021221805.txt","100","4141531.94","4141539","4141553","4141505","4141553","0","Runtime label supported by configuration evidence; log does not embed firmware SHA-256","1"
+"R2A ESP-NN ANSI","log.person_detection.20261021225811.txt","100","530432.86","530439","530449","530404","530459","0","Runtime label supported by configuration evidence; log does not embed firmware SHA-256","7.808"
+"R2 ESP-NN Optimized","log.person_detection.20261021202454.txt","100","401644.1","401641","401722","401561","401727","0","Runtime label supported by configuration evidence; log does not embed firmware SHA-256","10.311"
