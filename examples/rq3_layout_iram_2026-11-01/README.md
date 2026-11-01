@@ -1,6 +1,6 @@
 # Editor experiments, 1 November 2026
 
-Two checks asked for in the editor's e-mail of 1 November 2026, run on the same ESP32-D0WD-V3 board (COM5) with one command.
+Two checks asked for in the editor's e-mail of 30 October 2026, run on 1 November 2026 on the same ESP32-D0WD-V3 board (COM5) with one command.
 
 ## How to run
 

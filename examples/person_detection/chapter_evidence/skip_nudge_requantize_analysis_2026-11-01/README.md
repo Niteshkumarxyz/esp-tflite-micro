@@ -1,6 +1,6 @@
 # Skip-nudge requantize analysis (1 November 2026)
 
-Question from the editor (1 Nov): ESP-NN's NN_SKIP_NUDGE is documented as "fast (non-bit-exact)", "may differ from the
+Question from the editor (30 Oct): ESP-NN's NN_SKIP_NUDGE is documented as "fast (non-bit-exact)", "may differ from the
 TFLite reference by +/-1 LSB at half-shift boundaries", yet the R2-SN build matched R1 at all 372 operator hashes and
 1,000 paired runs. Why?
 

@@ -1,4 +1,5 @@
-"""New figures for chapter v20, drawn from verified data files only. Style matches the v19 figures."""
+"""Figures 4, 5, 6, 7, 9, 10 and 14 of the chapter manuscript (version 21), drawn from the data files in ../data and
+../../rq4_boot_kat_2026-10-29. Writes PNG and 300 dpi TIF files to ../output."""
 import json, math, os
 import numpy as np
 import matplotlib
@@ -6,7 +7,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 
-OUT = "/home/claude/ch21/figs"; os.makedirs(OUT, exist_ok=True)
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, "..", "data")
+BOOT = os.path.join(HERE, "..", "..", "rq4_boot_kat_2026-10-29")
+OUT = os.path.join(HERE, "..", "output"); os.makedirs(OUT, exist_ok=True)
 BLUE, ORANGE, GREEN, PURPLE, GREY, INK, MUTED = "#2a78d6", "#eb6834", "#1baf7a", "#8c6bb1", "#b9b8b3", "#0b0b0b", "#52514e"
 plt.rcParams.update({"font.family": "Liberation Sans", "font.size": 10, "axes.edgecolor": "#52514e", "axes.labelcolor": INK,
                      "xtick.color": MUTED, "ytick.color": MUTED, "axes.spines.top": False, "axes.spines.right": False,
@@ -26,7 +30,7 @@ def save(fig, name):
 
 
 # ------------------------------------------------------------------ Fig 4: outputs on 12 images
-w1 = json.load(open("/home/claude/rq4/rq4_w1.json"))
+w1 = json.load(open(os.path.join(DATA, "rq4_w1.json")))
 rows = w1["rows"]
 xnn_out = {r["image"]: (r["S"] if r["X_out_equals_S"] else None) for r in rows}
 xnn_out[11] = -60  # README of the Arm package and the 25 Oct host run: XNNPACK -60 on image 11
@@ -51,7 +55,7 @@ ax.set_position([0.1, 0.3, 0.88, 0.52])
 save(fig, "fig04_outputs_12_images")
 
 # ------------------------------------------------------------------ Fig 5: operator-level view
-ops = json.load(open("/home/claude/rq4/w1_oplevel.json"))
+ops = json.load(open(os.path.join(DATA, "w1_oplevel.json")))
 seq = ['DW', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'DW', 'C', 'P', 'C', 'R', 'S']
 fig = plt.figure(figsize=(W, 3.6))
 header(fig, "Single rounding departs at operator 0 and the gap grows with depth",
@@ -93,7 +97,7 @@ ax.set_xlim(-0.5, 5.5); ax.set_ylim(399.5, 415.5); ax.set_ylabel("Invoke latency
 save(fig, "fig09_r2_latency_by_build")
 
 # ------------------------------------------------------------------ Fig 10: W2 open loop
-w2 = json.load(open("/home/claude/rq4/rq4_w2.json"))
+w2 = json.load(open(os.path.join(DATA, "rq4_w2.json")))
 fig = plt.figure(figsize=(W, 3.6))
 header(fig, "Rounding differences appear inside W2 far more often than in its actions",
        "50,000 int8 observations per model; every difference in an action is exactly 1 LSB")
@@ -129,18 +133,18 @@ header(fig, "Every trajectory separates, yet outcomes change only under stress",
        "Same seeds, double against single rounding; nominal: 200 episodes; stress: 1,000 episodes per model")
 a1 = fig.add_axes([0.08, 0.2, 0.44, 0.58]); a2 = fig.add_axes([0.62, 0.2, 0.36, 0.58])
 for m, c in (("per_tensor", BLUE), ("per_channel", ORANGE)):
-    s = json.load(open(f"/home/claude/w2/out/eval_{m}/summary.json"))
+    s = json.load(open(os.path.join(DATA, f"w2_eval_{m}_summary.json")))
     fs = np.sort(np.array(s["runtimes"]["TFLM_x86_reference"]["closed_loop_first_separation_steps"]) / 20.0)
     a1.step(fs, np.arange(1, len(fs) + 1) / len(fs) * 100, where="post", color=c, lw=1.8, label=f"{m.replace('_', '-')} (median {np.median(fs):.2f} s)")
 a1.set_xlabel("Time to first different action (s)"); a1.set_ylabel("Episodes separated (%)"); a1.set_xlim(0, 16); a1.set_ylim(0, 102)
 a1.set_title("(a) Nominal: when same-seed trajectories split", fontsize=10, loc="left", color=INK)
 a1.legend(frameon=False, fontsize=8.5, loc="lower right")
-st = {m: json.load(open(f"/home/claude/w2/out/stress_{m}.json")) for m in ("per_tensor", "per_channel")}
+st = {m: json.load(open(os.path.join(DATA, f"w2_stress_{m}.json"))) for m in ("per_tensor", "per_channel")}
 labels = ["single\nrounding", "XNNPACK", "LiteRT\nOPT"]
 for j, (m, c, off) in enumerate((("per_tensor", BLUE, -0.18), ("per_channel", ORANGE, 0.18))):
     lost = [st[m]["LiteRT_REF_single_rounding_family"]["vs_double_rounding"]["ref_only"], st[m]["LiteRT_XNNPACK"]["vs_double_rounding"]["ref_only"]]
     gained = [st[m]["LiteRT_REF_single_rounding_family"]["vs_double_rounding"]["this_only"], st[m]["LiteRT_XNNPACK"]["vs_double_rounding"]["this_only"]]
-    o = json.load(open(f"/home/claude/rq4/stress_opt_{m}.json"))
+    o = json.load(open(os.path.join(DATA, f"stress_opt_{m}.json")))
     lost.append(o["double_only"]); gained.append(o["opt_only"])
     xx = np.arange(3) + off
     a2.bar(xx, [-v for v in lost], width=0.34, color=c)
@@ -188,11 +192,11 @@ print("ok")
 # ------------------------------------------------------------------ Fig 10 (v21): acceptance test on the board
 import csv, re
 from collections import defaultdict
-rows = list(csv.DictReader(open("/home/claude/ch21/figs/rq4_boot_kat_summary_20261029_203054.csv")))
+rows = list(csv.DictReader(open(os.path.join(BOOT, "rq4_boot_kat_summary_20261029_203054.csv"))))
 g = defaultdict(list)
 for r in rows:
     g[r["build"]].append(r)
-log = open("/home/claude/ch21/figs/boot_r1sr_1_20261029_203054.txt", "rb").read().decode("latin1")
+log = open(os.path.join(BOOT, "boot_r1sr_1_20261029_203054.txt"), "rb").read().decode("latin1")
 sr_ops, sr_out = {}, {}
 for m in re.finditer(r"RQ4_IMAGE,image=(\d+),.*?output_match=(\d),ops_match=(\d+)", log):
     sr_ops[int(m[1])] = int(m[3]); sr_out[int(m[1])] = int(m[2])

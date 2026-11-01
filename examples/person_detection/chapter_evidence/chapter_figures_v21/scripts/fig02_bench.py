@@ -1,3 +1,5 @@
+"""Figure 2 of the chapter manuscript (version 21): the test bench. Writes PNG and 300 dpi TIF files to ../output."""
+import os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -55,6 +57,7 @@ for y in (42, 25, 9):
 arrow(78.4, 33, 80.2, 33)
 # W2 loop note
 box(56, 2.6, 43, 13.6, "W2 hardware-in-the-loop (ESP32)", ["Host simulator sends the int8 observation over UART", "(115,200 baud); the board returns the int8 action;", "lockstep, so speed cannot change the outcome.", "R1, R2A, R2 × 2 models: 10,000-run benchmark,", "50,000 open-loop actions, 200 seeded episodes each"], fc="white")
-fig.savefig("/home/claude/rq4/figs/fig02_bench.png", dpi=300, facecolor="white")
-fig.savefig("/home/claude/rq4/figs/fig02_bench.tif", dpi=300, facecolor="white", pil_kwargs={"compression": "tiff_lzw"})
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "output"); os.makedirs(OUT, exist_ok=True)
+fig.savefig(os.path.join(OUT, "fig02_bench.png"), dpi=300, facecolor="white")
+fig.savefig(os.path.join(OUT, "fig02_bench.tif"), dpi=300, facecolor="white", pil_kwargs={"compression": "tiff_lzw"})
 print("ok")

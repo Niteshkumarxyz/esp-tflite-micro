@@ -1,0 +1,10 @@
+examples/rq3_layout_iram_2026-11-01/README.md
+examples/rq3_layout_iram_2026-11-01/run_editor_experiments_2026-11-01.py
+examples/person_detection/chapter_evidence/skip_nudge_requantize_analysis_2026-11-01/README.md
+examples/person_detection/chapter_evidence/skip_nudge_requantize_analysis_2026-11-01/SHA256SUMS.txt
+examples/person_detection/chapter_evidence/chapter_figures_v21/README.md
+examples/person_detection/chapter_evidence/chapter_figures_v21/scripts/figs21.py
+examples/person_detection/chapter_evidence/chapter_figures_v21/scripts/fig02_bench.py
+RELEASE_NOTES_v0.2.1.md
+SHA256SUMS_v0.2.1.txt
+release_v0.2.1_files.txt

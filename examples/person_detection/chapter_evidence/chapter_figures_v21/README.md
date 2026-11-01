@@ -2,7 +2,7 @@
 
 The 14 figures of "Same Model, Different Robot: Checking Int8 Runtimes Before the Robot Moves" (manuscript version 21, 30 October 2026), with the scripts and data that drew them.
 
-`figures/` holds the PNG files exactly as placed in the manuscript. The scripts write PNG and 300 dpi TIF files. The paths inside the scripts point to the authors' working folders; the inputs they read are in `data/` or in the evidence folders named below.
+`figures/` holds the PNG files exactly as placed in the manuscript. The scripts write PNG and 300 dpi TIF files. `figs21.py` and `fig02_bench.py` read `data/` and `../rq4_boot_kat_2026-10-29/` and write to `output/`; `make_figs.py` and `diagrams.py` read `data/` and write next to themselves in `scripts/`.
 
 | Figure | File | Drawn by | Data |
 |---|---|---|---|
@@ -21,6 +21,6 @@ The 14 figures of "Same Model, Different Robot: Checking Int8 Runtimes Before th
 | 13 | Figure13_ten_hour.png | scripts/make_figs.py (fig_drift) | data/drift_minutes.csv |
 | 14 | Figure14_r2_latency_by_build.png | scripts/figs21.py | values typed from the benchmark logs, noted in the script |
 
-`make_figs.py` reads its CSV files from `../data` relative to its own folder; copy `data/` next to `scripts/` before running it. `diagrams.py` renders SVG through a headless browser.
+Run on 1 November 2026 with Python 3 and matplotlib 3.11.2, `figs21.py`, `fig02_bench.py` and `make_figs.py` redrew figures 2, 4, 5, 6, 7, 9, 10, 11, 12, 13 and 14 pixel for pixel identical to the files in `figures/`. `diagrams.py` (figure 8) renders SVG through a headless browser and was not rerun.
 
 The file `data/rq4_w1.json` and the other JSON inputs are also inside `../rq4_w2_analysis_archive_2026-10-29/rq4_w2_analysis_archive_2026-10-29.zip`, together with the analysis scripts that wrote them.

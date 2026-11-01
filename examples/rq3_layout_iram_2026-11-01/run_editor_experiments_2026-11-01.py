@@ -1,4 +1,4 @@
-"""Experiments asked for in the editor's e-mail of 1 November 2026, run on the ESP32 with one command.
+"""Experiments asked for in the editor's e-mail of 30 October 2026, run on the ESP32 with one command.
 
 Part A - skip-nudge requantize on the chip
   Builds examples/skipnudge_requant_test_2026-11-01, which compares ESP-NN 1.4.1's bit-exact and skip-nudge
